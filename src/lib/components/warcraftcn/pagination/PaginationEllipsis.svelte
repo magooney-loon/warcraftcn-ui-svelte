@@ -9,7 +9,10 @@
 
 <li data-slot="pagination-ellipsis">
 	<span
-		class={['flex h-10 w-10 items-center justify-center sm:h-12 sm:w-12 text-amber-100/50', className]}
+		class={[
+			'flex h-10 w-10 items-center justify-center text-amber-100/50 sm:h-12 sm:w-12',
+			className
+		]}
 		{...restProps}
 		aria-hidden="true"
 	>

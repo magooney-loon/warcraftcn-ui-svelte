@@ -1,5 +1,12 @@
 <script lang="ts">
-	import { Button } from '$lib/components/warcraftcn/index.js';
+	import { Button, Spinner } from '$lib/components/warcraftcn/index.js';
+
+	let loading = $state(false);
+
+	function simulateLoad() {
+		loading = true;
+		setTimeout(() => (loading = false), 2000);
+	}
 </script>
 
 <svelte:head>
@@ -10,26 +17,68 @@
 	<div>
 		<h1 class="fantasy text-3xl font-bold text-amber-200">Button</h1>
 		<p class="mt-2 text-amber-100/70">
-			A Warcraft-themed button with gold border-image frames. Supports default and frame variants.
+			A Warcraft-themed button with gold border-image frames. Supports
+			<code class="text-amber-300">default</code> and <code class="text-amber-300">frame</code> variants.
 		</p>
 	</div>
 
-	<!-- Default Buttons -->
+	<!-- Default Variant -->
 	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">Default Variant</h2>
+		<h2 class="fantasy text-xl text-amber-300">Default</h2>
 		<div class="flex flex-wrap items-center gap-4">
-			<Button>Default Button</Button>
+			<Button>Accept Quest</Button>
 			<Button disabled>Disabled</Button>
 		</div>
 	</section>
 
-	<!-- Frame Buttons -->
+	<!-- Frame Variant -->
 	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">Frame Variant</h2>
+		<h2 class="fantasy text-xl text-amber-300">Frame</h2>
 		<div class="flex flex-wrap items-center gap-4">
-			<Button variant="frame">Frame Button</Button>
+			<Button variant="frame">Open Chest</Button>
 			<Button variant="frame" disabled>Disabled</Button>
 		</div>
+	</section>
+
+	<!-- Loading State -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Loading State</h2>
+		<div class="flex flex-wrap items-center gap-4">
+			<Button disabled={loading} onclick={simulateLoad}>
+				{#if loading}
+					<Spinner class="size-4" />
+					Loading...
+				{:else}
+					Submit
+				{/if}
+			</Button>
+			<Button variant="frame" disabled={loading} onclick={simulateLoad}>
+				{#if loading}
+					<Spinner class="size-4" />
+					Please wait
+				{:else}
+					Cast Spell
+				{/if}
+			</Button>
+		</div>
+	</section>
+
+	<!-- As Link -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">As Link</h2>
+		<p class="text-sm text-amber-100/60">
+			Pass any HTML attribute — use with an anchor tag via wrapping or slot.
+		</p>
+		<div class="flex flex-wrap items-center gap-4">
+			<Button onclick={() => {}}>Navigate</Button>
+		</div>
+	</section>
+
+	<!-- Installation -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
+		<pre
+			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
 	</section>
 
 	<!-- Usage -->
@@ -37,11 +86,48 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Button } from '$lib/components/warcraftcn/index.js';
+  import { Button } from 'warcraftcn-ui-svelte';
 &lt;/script&gt;
 
-&lt;Button&gt;Default Button&lt;/Button&gt;
-&lt;Button variant="frame"&gt;Frame Button&lt;/Button&gt;
-&lt;Button disabled&gt;Disabled&lt;/Button&gt;</code>`}</pre>
+&lt;Button&gt;Accept Quest&lt;/Button&gt;
+&lt;Button variant="frame"&gt;Open Chest&lt;/Button&gt;
+&lt;Button disabled&gt;Locked&lt;/Button&gt;
+
+&lt;!-- Loading state --&gt;
+&lt;Button disabled={loading} onclick={handleClick}&gt;
+  {#if loading}
+    &lt;Spinner class="size-4" /&gt; Loading...
+  {:else}
+    Submit
+  {/if}
+&lt;/Button&gt;</code>`}</pre>
+	</section>
+
+	<!-- Props -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Props</h2>
+		<div class="overflow-x-auto rounded-lg border border-amber-900/30">
+			<table class="w-full text-sm text-amber-100/80">
+				<thead class="border-b border-amber-900/30 bg-black/20">
+					<tr>
+						<th class="px-4 py-2 text-left text-amber-300">Prop</th>
+						<th class="px-4 py-2 text-left text-amber-300">Type</th>
+						<th class="px-4 py-2 text-left text-amber-300">Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="border-b border-amber-900/20">
+						<td class="px-4 py-2 font-mono">variant</td>
+						<td class="px-4 py-2">"default" | "frame"</td>
+						<td class="px-4 py-2">"default"</td>
+					</tr>
+					<tr>
+						<td class="px-4 py-2 font-mono">disabled</td>
+						<td class="px-4 py-2">boolean</td>
+						<td class="px-4 py-2">false</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</section>
 </div>

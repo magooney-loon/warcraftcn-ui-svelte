@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from '$lib/components/warcraftcn/index.js';
+	import { Badge, Spinner } from '$lib/components/warcraftcn/index.js';
 </script>
 
 <svelte:head>
@@ -18,7 +18,7 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Variants</h2>
 		<div class="flex flex-wrap items-center gap-4">
-			<Badge>Default</Badge>
+			<Badge variant="default">Default</Badge>
 			<Badge variant="secondary">Secondary</Badge>
 			<Badge variant="destructive">Destructive</Badge>
 			<Badge variant="outline">Outline</Badge>
@@ -54,18 +54,93 @@
 		</div>
 	</section>
 
+	<!-- With Icon (Spinner) -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">With Icon</h2>
+		<div class="flex flex-wrap items-center gap-4">
+			<Badge>
+				<Spinner class="size-3" />
+				Syncing
+			</Badge>
+			<Badge variant="secondary">
+				<Spinner class="size-3" />
+				Loading
+			</Badge>
+		</div>
+	</section>
+
+	<!-- Combined Props -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Combined</h2>
+		<div class="flex flex-wrap items-center gap-4">
+			<Badge size="lg" faction="alliance" shape="shield">Alliance Shield</Badge>
+			<Badge size="lg" faction="horde" shape="banner">Horde Banner</Badge>
+			<Badge size="sm" variant="destructive" shape="shield">Danger</Badge>
+		</div>
+	</section>
+
+	<!-- Installation -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
+		<pre
+			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
+	</section>
+
 	<!-- Usage -->
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Badge } from '$lib/components/warcraftcn/index.js';
+  import { Badge } from 'warcraftcn-ui-svelte';
 &lt;/script&gt;
 
 &lt;Badge&gt;Default&lt;/Badge&gt;
 &lt;Badge variant="secondary"&gt;Secondary&lt;/Badge&gt;
 &lt;Badge variant="destructive"&gt;Destructive&lt;/Badge&gt;
 &lt;Badge variant="outline"&gt;Outline&lt;/Badge&gt;
-&lt;Badge size="lg" faction="alliance" shape="shield"&gt;Alliance&lt;/Badge&gt;</code>`}</pre>
+
+&lt;Badge size="sm"&gt;Small&lt;/Badge&gt;
+&lt;Badge size="lg"&gt;Large&lt;/Badge&gt;
+
+&lt;Badge faction="alliance" shape="shield"&gt;Alliance&lt;/Badge&gt;
+&lt;Badge faction="horde" shape="banner"&gt;Horde&lt;/Badge&gt;</code>`}</pre>
+	</section>
+
+	<!-- Props -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Props</h2>
+		<div class="overflow-x-auto rounded-lg border border-amber-900/30">
+			<table class="w-full text-sm text-amber-100/80">
+				<thead class="border-b border-amber-900/30 bg-black/20">
+					<tr>
+						<th class="px-4 py-2 text-left text-amber-300">Prop</th>
+						<th class="px-4 py-2 text-left text-amber-300">Type</th>
+						<th class="px-4 py-2 text-left text-amber-300">Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="border-b border-amber-900/20">
+						<td class="px-4 py-2 font-mono">variant</td>
+						<td class="px-4 py-2">"default" | "secondary" | "destructive" | "outline"</td>
+						<td class="px-4 py-2">"default"</td>
+					</tr>
+					<tr class="border-b border-amber-900/20">
+						<td class="px-4 py-2 font-mono">size</td>
+						<td class="px-4 py-2">"sm" | "default" | "lg"</td>
+						<td class="px-4 py-2">"default"</td>
+					</tr>
+					<tr class="border-b border-amber-900/20">
+						<td class="px-4 py-2 font-mono">faction</td>
+						<td class="px-4 py-2">"alliance" | "horde"</td>
+						<td class="px-4 py-2">—</td>
+					</tr>
+					<tr>
+						<td class="px-4 py-2 font-mono">shape</td>
+						<td class="px-4 py-2">"default" | "shield" | "banner"</td>
+						<td class="px-4 py-2">"default"</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</section>
 </div>

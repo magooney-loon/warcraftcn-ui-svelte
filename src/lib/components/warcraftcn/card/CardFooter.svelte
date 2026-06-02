@@ -12,7 +12,7 @@
 
 <div
 	data-slot="card-footer"
-	class={['rounded-b-xl p-4 group-data-[size=sm]/card:p-3 flex items-center', className]}
+	class={['flex items-center rounded-b-xl p-4 group-data-[size=sm]/card:p-3', className]}
 	{...restProps}
 >
 	{@render children?.()}

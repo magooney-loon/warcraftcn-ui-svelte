@@ -24,7 +24,7 @@
 	role="menuitem"
 	tabindex={disabled ? -1 : 0}
 	class={[
-		'fantasy relative flex cursor-pointer select-none items-center gap-2 px-5 py-2 text-sm text-amber-100 outline-none transition-all hover:bg-amber-900/30 focus:bg-amber-900/30',
+		'fantasy relative flex cursor-pointer items-center gap-2 px-5 py-2 text-sm text-amber-100 transition-all outline-none select-none hover:bg-amber-900/30 focus:bg-amber-900/30',
 		disabled && 'pointer-events-none opacity-50',
 		className
 	]}

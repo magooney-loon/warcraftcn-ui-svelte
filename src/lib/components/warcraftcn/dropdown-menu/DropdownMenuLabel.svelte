@@ -10,7 +10,10 @@
 </script>
 
 <div
-	class={['fantasy px-5 pb-2 pt-5 text-xs font-semibold uppercase tracking-wider text-amber-400/80', className]}
+	class={[
+		'fantasy px-5 pt-5 pb-2 text-xs font-semibold tracking-wider text-amber-400/80 uppercase',
+		className
+	]}
 	data-slot="dropdown-menu-label"
 >
 	{@render children?.()}

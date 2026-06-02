@@ -17,22 +17,23 @@
 	<div>
 		<h1 class="fantasy text-3xl font-bold text-amber-200">Tooltip</h1>
 		<p class="mt-2 text-amber-100/70">
-			A Warcraft-themed tooltip with rarity-based color variants inspired by item tooltips. Hover
-			over each button to see the tooltip.
+			A Warcraft-themed tooltip with item-rarity color variants. Hover over each trigger to preview.
+			Compose with <code class="text-amber-300">TooltipTitle</code> and
+			<code class="text-amber-300">TooltipBody</code> for rich content.
 		</p>
 	</div>
 
-	<!-- Default -->
+	<!-- All Variants -->
 	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">Default</h2>
+		<h2 class="fantasy text-xl text-amber-300">Rarity Variants</h2>
 		<div class="flex flex-wrap gap-4">
 			<Tooltip>
 				<TooltipTrigger>
-					<Button>Common Item</Button>
+					<Button>Common</Button>
 				</TooltipTrigger>
 				<TooltipContent>
 					<TooltipTitle>Short Sword</TooltipTitle>
-					<TooltipBody>A simple but reliable blade.</TooltipBody>
+					<TooltipBody>A simple but reliable blade. No special enchantments.</TooltipBody>
 				</TooltipContent>
 			</Tooltip>
 
@@ -42,7 +43,7 @@
 				</TooltipTrigger>
 				<TooltipContent>
 					<TooltipTitle>Enchanted Blade</TooltipTitle>
-					<TooltipBody>Glows faintly with arcane energy.</TooltipBody>
+					<TooltipBody>Glows faintly with arcane energy, granting +5 Attack Speed.</TooltipBody>
 				</TooltipContent>
 			</Tooltip>
 
@@ -52,7 +53,9 @@
 				</TooltipTrigger>
 				<TooltipContent>
 					<TooltipTitle>Frostmourne Shard</TooltipTitle>
-					<TooltipBody>A fragment of the cursed blade.</TooltipBody>
+					<TooltipBody>
+						A fragment of the cursed blade. Whispers of the damned emanate from within.
+					</TooltipBody>
 				</TooltipContent>
 			</Tooltip>
 
@@ -62,7 +65,7 @@
 				</TooltipTrigger>
 				<TooltipContent>
 					<TooltipTitle>Thunderfury</TooltipTitle>
-					<TooltipBody>Blessed by the Windseeker.</TooltipBody>
+					<TooltipBody>Blessed Blade of the Windseeker. Binds when picked up.</TooltipBody>
 				</TooltipContent>
 			</Tooltip>
 
@@ -72,10 +75,34 @@
 				</TooltipTrigger>
 				<TooltipContent>
 					<TooltipTitle>Atiesh, Greatstaff of the Guardian</TooltipTitle>
-					<TooltipBody>The staff of the last Guardian of Tirisfal.</TooltipBody>
+					<TooltipBody>
+						The staff of the last Guardian of Tirisfal. Only one may exist on each realm.
+					</TooltipBody>
 				</TooltipContent>
 			</Tooltip>
 		</div>
+	</section>
+
+	<!-- Title Only -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Title Only</h2>
+		<div class="flex flex-wrap gap-4">
+			<Tooltip>
+				<TooltipTrigger>
+					<Button>Hover me</Button>
+				</TooltipTrigger>
+				<TooltipContent>
+					<TooltipTitle>Simple Tooltip</TooltipTitle>
+				</TooltipContent>
+			</Tooltip>
+		</div>
+	</section>
+
+	<!-- Installation -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
+		<pre
+			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
 	</section>
 
 	<!-- Usage -->
@@ -85,8 +112,8 @@
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
   import {
     Tooltip, TooltipTrigger, TooltipContent,
-    TooltipTitle, TooltipBody, Button
-  } from '$lib/components/warcraftcn/index.js';
+    TooltipTitle, TooltipBody
+  } from 'warcraftcn-ui-svelte';
 &lt;/script&gt;
 
 &lt;Tooltip variant="rare"&gt;
@@ -99,6 +126,29 @@
   &lt;/TooltipContent&gt;
 &lt;/Tooltip&gt;
 
-&lt;!-- Variants: default, uncommon, rare, epic, legendary --&gt;</code>`}</pre>
+&lt;!-- Variants: default | uncommon | rare | epic | legendary --&gt;</code>`}</pre>
+	</section>
+
+	<!-- Props -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Props</h2>
+		<div class="overflow-x-auto rounded-lg border border-amber-900/30">
+			<table class="w-full text-sm text-amber-100/80">
+				<thead class="border-b border-amber-900/30 bg-black/20">
+					<tr>
+						<th class="px-4 py-2 text-left text-amber-300">Prop</th>
+						<th class="px-4 py-2 text-left text-amber-300">Type</th>
+						<th class="px-4 py-2 text-left text-amber-300">Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="px-4 py-2 font-mono">variant</td>
+						<td class="px-4 py-2">"default" | "uncommon" | "rare" | "epic" | "legendary"</td>
+						<td class="px-4 py-2">"default"</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</section>
 </div>

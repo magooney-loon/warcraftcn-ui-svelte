@@ -12,7 +12,7 @@
 
 <ul
 	data-slot="pagination-content"
-	class={['flex flex-row items-center gap-1 list-none', className]}
+	class={['flex list-none flex-row items-center gap-1', className]}
 	{...restProps}
 >
 	{@render children?.()}

@@ -19,21 +19,21 @@ Live at [warcraftcn.com](https://warcraftcn.com/).
 
 ## Tech Stack
 
-| Layer          | Technology                                        |
-| -------------- | ------------------------------------------------- |
-| Framework      | Next.js 16 (App Router, React 19, RSC)            |
-| Language       | TypeScript (strict mode)                          |
-| Styling        | Tailwind CSS v4 + custom CSS (`warcraft.css`)     |
+| Layer          | Technology                                         |
+| -------------- | -------------------------------------------------- |
+| Framework      | Next.js 16 (App Router, React 19, RSC)             |
+| Language       | TypeScript (strict mode)                           |
+| Styling        | Tailwind CSS v4 + custom CSS (`warcraft.css`)      |
 | Component Head | Radix UI (accordion, tabs, dialog, dropdown, etc.) |
-| Variants       | `class-variance-authority` (cva)                  |
-| Merging        | `tailwind-merge` + `clsx` → `cn()` util           |
-| Animation      | `motion` (framer-motion v12)                      |
-| Toast          | `sonner` (custom scroll-toast overlay)            |
-| Icons          | `lucide-react`                                    |
-| Docs Engine    | `fumadocs` (MDX, search, sidebar, layout)         |
-| Linting        | Biome (`ultracite` presets)                       |
-| Package Mgr    | pnpm                                              |
-| Commit Hooks   | Husky (`pre-commit`)                              |
+| Variants       | `class-variance-authority` (cva)                   |
+| Merging        | `tailwind-merge` + `clsx` → `cn()` util            |
+| Animation      | `motion` (framer-motion v12)                       |
+| Toast          | `sonner` (custom scroll-toast overlay)             |
+| Icons          | `lucide-react`                                     |
+| Docs Engine    | `fumadocs` (MDX, search, sidebar, layout)          |
+| Linting        | Biome (`ultracite` presets)                        |
+| Package Mgr    | pnpm                                               |
+| Commit Hooks   | Husky (`pre-commit`)                               |
 
 ## Project Structure
 
@@ -99,52 +99,57 @@ OLD/
 
 All themed components live under `OLD/components/ui/warcraftcn/`:
 
-| Component         | File              | Radix Dependency              | Key Features                                     |
-| ----------------- | ----------------- | ----------------------------- | ------------------------------------------------ |
-| Accordion         | accordion.tsx     | `@radix-ui/react-accordion`   | Animated sword/shield/rune icons, scroll content |
-| Avatar            | avatar.tsx        | —                             | Faction-based (orc/elf/human/undead/default)     |
-| Badge             | badge.tsx         | —                             | Variant-based fantasy styling                    |
-| Button            | button.tsx        | `@radix-ui/react-slot`        | `border-image` frames, default + frame variants  |
-| Card              | card.tsx          | —                             | `border-image` card frame, size variants         |
-| Checkbox          | checkbox.tsx      | —                             | Faction-themed checked/unchecked images          |
-| Cursor            | cursor.tsx        | —                             | Faction-based custom CSS cursors                 |
-| Dropdown Menu     | dropdown-menu.tsx | `@radix-ui/react-dropdown-menu`| Full Radix dropdown with fantasy borders         |
-| Input             | input.tsx         | —                             | Frame variant with border-image                  |
-| Label             | label.tsx         | `@radix-ui/react-label`       | Styled label                                     |
-| Pagination        | pagination.tsx    | —                             | Uses Button's `buttonVariants`                   |
-| Radio Group       | radio-group.tsx   | —                             | Faction-based radio buttons                      |
-| Skeleton          | skeleton.tsx      | —                             | Pulsing fantasy placeholder                      |
-| Spinner           | spinner.tsx       | —                             | SVG path-based spinner                           |
-| Tabs              | tabs.tsx          | `@radix-ui/react-tabs`        | Faction-themed tabs, vertical/horizontal         |
-| Textarea          | textarea.tsx      | —                             | Styled with warcraft frame                       |
-| Toast             | toast.tsx         | `sonner` + `motion`           | Scroll-unroll animation, 5 factions              |
-| Tooltip           | tooltip.tsx       | `@radix-ui/react-tooltip`     | Fantasy-themed tooltip                           |
+| Component     | File              | Radix Dependency                | Key Features                                     |
+| ------------- | ----------------- | ------------------------------- | ------------------------------------------------ |
+| Accordion     | accordion.tsx     | `@radix-ui/react-accordion`     | Animated sword/shield/rune icons, scroll content |
+| Avatar        | avatar.tsx        | —                               | Faction-based (orc/elf/human/undead/default)     |
+| Badge         | badge.tsx         | —                               | Variant-based fantasy styling                    |
+| Button        | button.tsx        | `@radix-ui/react-slot`          | `border-image` frames, default + frame variants  |
+| Card          | card.tsx          | —                               | `border-image` card frame, size variants         |
+| Checkbox      | checkbox.tsx      | —                               | Faction-themed checked/unchecked images          |
+| Cursor        | cursor.tsx        | —                               | Faction-based custom CSS cursors                 |
+| Dropdown Menu | dropdown-menu.tsx | `@radix-ui/react-dropdown-menu` | Full Radix dropdown with fantasy borders         |
+| Input         | input.tsx         | —                               | Frame variant with border-image                  |
+| Label         | label.tsx         | `@radix-ui/react-label`         | Styled label                                     |
+| Pagination    | pagination.tsx    | —                               | Uses Button's `buttonVariants`                   |
+| Radio Group   | radio-group.tsx   | —                               | Faction-based radio buttons                      |
+| Skeleton      | skeleton.tsx      | —                               | Pulsing fantasy placeholder                      |
+| Spinner       | spinner.tsx       | —                               | SVG path-based spinner                           |
+| Tabs          | tabs.tsx          | `@radix-ui/react-tabs`          | Faction-themed tabs, vertical/horizontal         |
+| Textarea      | textarea.tsx      | —                               | Styled with warcraft frame                       |
+| Toast         | toast.tsx         | `sonner` + `motion`             | Scroll-unroll animation, 5 factions              |
+| Tooltip       | tooltip.tsx       | `@radix-ui/react-tooltip`       | Fantasy-themed tooltip                           |
 
 ## Key Patterns
 
 ### Faction Theming
+
 Most components support a `faction` prop: `"default" | "orc" | "elf" | "human" | "undead"`. Each faction maps to CSS classes that apply different `border-image`, background images, and color schemes.
 
 ### CSS Architecture
+
 - `warcraft.css` defines `border-image-source` rules using `wc-*` class prefixes (e.g., `wc-btn-border`, `wc-card-border`, `wc-dropdown-border`)
 - Animations are keyframe-based: `wc-accordion-down`, `wc-accordion-up`, `wc-light-sweep`
 - Component sizes use CSS `border-image-slice` and `border-width` for the frame effect
 
 ### Variant System
+
 Components use `cva()` from `class-variance-authority` to define variant classes, merged via the `cn()` utility (`clsx` + `tailwind-merge`).
 
 ### Component Props Pattern
+
 ```tsx
 function Component({
-  className,
-  variant,
-  ...props
-}: React.ComponentProps<"element"> & VariantProps<typeof variants>) {
-  return <element className={cn(variants({ variant }), className)} {...props} />;
+	className,
+	variant,
+	...props
+}: React.ComponentProps<'element'> & VariantProps<typeof variants>) {
+	return <element className={cn(variants({ variant }), className)} {...props} />;
 }
 ```
 
 ### Registry System
+
 `registry.json` follows the [shadcn/ui registry schema](https://ui.shadcn.com/registry). Each component entry lists its files, dependencies, and registry dependencies. This enables `npx shadcn add @warcraftcn/button` for consumers.
 
 ## Development Commands

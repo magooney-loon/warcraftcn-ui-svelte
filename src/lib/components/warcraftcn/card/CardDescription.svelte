@@ -12,7 +12,7 @@
 
 <div
 	data-slot="card-description"
-	class={['text-muted-foreground text-sm', className]}
+	class={['text-sm text-muted-foreground', className]}
 	{...restProps}
 >
 	{@render children?.()}

@@ -15,12 +15,14 @@ export function getToasts(): Toast[] {
 	return store.toasts;
 }
 
-export function addToast(options: {
-	message?: string;
-	faction?: ScrollFaction;
-	variant?: ToastVariant;
-	durationMs?: number;
-} = {}): string {
+export function addToast(
+	options: {
+		message?: string;
+		faction?: ScrollFaction;
+		variant?: ToastVariant;
+		durationMs?: number;
+	} = {}
+): string {
 	const id = crypto.randomUUID();
 	store.toasts = [
 		...store.toasts,
@@ -39,12 +41,14 @@ export function removeToast(id: string) {
 	store.toasts = store.toasts.filter((t) => t.id !== id);
 }
 
-export function triggerScrollToast(options: {
-	message?: string;
-	faction?: ScrollFaction;
-	variant?: ToastVariant;
-	durationMs?: number;
-} = {}) {
+export function triggerScrollToast(
+	options: {
+		message?: string;
+		faction?: ScrollFaction;
+		variant?: ToastVariant;
+		durationMs?: number;
+	} = {}
+) {
 	const id = addToast(options);
 	setTimeout(() => removeToast(id), options.durationMs ?? 5000);
 }

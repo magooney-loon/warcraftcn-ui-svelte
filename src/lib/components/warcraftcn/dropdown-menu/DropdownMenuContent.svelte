@@ -20,7 +20,7 @@
 		use:clickOutside={ctx.close}
 		transition:fade={{ duration: 150 }}
 		class={[
-			'fantasy absolute left-0 top-full z-50 min-w-40 overflow-hidden border-12 border-solid pb-4 [border-image-repeat:stretch] [border-image-slice:12_fill] wc-dropdown-border text-amber-100',
+			'fantasy wc-dropdown-border absolute top-full left-0 z-50 min-w-40 overflow-hidden border-12 border-solid pb-4 text-amber-100 [border-image-repeat:stretch] [border-image-slice:12_fill]',
 			className
 		]}
 		data-slot="dropdown-menu-content"

@@ -40,9 +40,9 @@
 	for={id}
 	data-slot="checkbox-wrapper"
 	class={[
-		'inline-flex items-center gap-3 cursor-pointer select-none fantasy font-bold mb-2',
+		'fantasy mb-2 inline-flex cursor-pointer items-center gap-3 font-bold select-none',
 		factionClasses[faction],
-		disabled && 'opacity-50 cursor-not-allowed'
+		disabled && 'cursor-not-allowed opacity-50'
 	]}
 >
 	<button
@@ -51,8 +51,8 @@
 		aria-checked={checked}
 		data-state={checked ? 'checked' : 'unchecked'}
 		data-disabled={disabled || undefined}
-		id={id}
-		disabled={disabled}
+		{id}
+		{disabled}
 		class={['wc-checkbox', `wc-checkbox-${faction}`, className]}
 		{...rest}
 		onclick={toggle}

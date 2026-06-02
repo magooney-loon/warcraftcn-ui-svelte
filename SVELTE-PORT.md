@@ -14,40 +14,40 @@
 
 ## Tech Stack
 
-| Layer              | React/Next.js (Current)     | Svelte 5 / SvelteKit (Target)         |
-| ------------------ | --------------------------- | -------------------------------------- |
-| Framework          | Next.js 16 (App Router)     | SvelteKit (Svelte 5 runes)            |
-| Language           | TypeScript (strict)         | TypeScript (strict)                    |
-| Styling            | Tailwind CSS v4             | Tailwind CSS v4 (unchanged)           |
-| Headless Primitives| Radix UI (7 packages)       | **None** — native HTML + Svelte state  |
-| Variant System     | `cva`                       | **Dropped** — plain objects + native class merging |
-| Class Merging      | `tailwind-merge` + `clsx`   | **Built-in** — Svelte 5.16+ `class` accepts objects/arrays natively |
-| Animation          | `motion` (framer-motion)    | Svelte transitions (built-in)         |
-| Toast              | `sonner`                    | **Custom** — Svelte transitions       |
-| Icons              | `lucide-react`              | Inline SVG (existing assets)          |
-| Docs Engine        | `fumadocs` (MDX)            | MDsveX + custom layout                |
-| Linting            | Biome (`ultracite`)         | Prettier (ships with Svelte)          |
-| Package Mgr        | pnpm                        | pnpm                                   |
-| Distribution       | shadcn registry (CLI)       | **Fork now → npm later** (no shadcn)   |
+| Layer               | React/Next.js (Current)   | Svelte 5 / SvelteKit (Target)                                       |
+| ------------------- | ------------------------- | ------------------------------------------------------------------- |
+| Framework           | Next.js 16 (App Router)   | SvelteKit (Svelte 5 runes)                                          |
+| Language            | TypeScript (strict)       | TypeScript (strict)                                                 |
+| Styling             | Tailwind CSS v4           | Tailwind CSS v4 (unchanged)                                         |
+| Headless Primitives | Radix UI (7 packages)     | **None** — native HTML + Svelte state                               |
+| Variant System      | `cva`                     | **Dropped** — plain objects + native class merging                  |
+| Class Merging       | `tailwind-merge` + `clsx` | **Built-in** — Svelte 5.16+ `class` accepts objects/arrays natively |
+| Animation           | `motion` (framer-motion)  | Svelte transitions (built-in)                                       |
+| Toast               | `sonner`                  | **Custom** — Svelte transitions                                     |
+| Icons               | `lucide-react`            | Inline SVG (existing assets)                                        |
+| Docs Engine         | `fumadocs` (MDX)          | MDsveX + custom layout                                              |
+| Linting             | Biome (`ultracite`)       | Prettier (ships with Svelte)                                        |
+| Package Mgr         | pnpm                      | pnpm                                                                |
+| Distribution        | shadcn registry (CLI)     | **Fork now → npm later** (no shadcn)                                |
 
 ### Dependencies
 
 ```json
 {
-  "devDependencies": {
-    "@sveltejs/kit": "latest",
-    "@sveltejs/adapter-static": "latest",
-    "@sveltejs/package": "latest",
-    "svelte": "^5",
-    "svelte-check": "latest",
-    "tailwindcss": "^4",
-    "@tailwindcss/vite": "^4",
-    "typescript": "^5",
-    "mdsvex": "latest",
-    "prettier": "latest",
-    "prettier-plugin-svelte": "latest"
-  },
-  "dependencies": {}
+	"devDependencies": {
+		"@sveltejs/kit": "latest",
+		"@sveltejs/adapter-static": "latest",
+		"@sveltejs/package": "latest",
+		"svelte": "^5",
+		"svelte-check": "latest",
+		"tailwindcss": "^4",
+		"@tailwindcss/vite": "^4",
+		"typescript": "^5",
+		"mdsvex": "latest",
+		"prettier": "latest",
+		"prettier-plugin-svelte": "latest"
+	},
+	"dependencies": {}
 }
 ```
 
@@ -62,7 +62,7 @@
 
 <!-- Nested — arrays can contain objects and other arrays -->
 <button {...props} class={['warcraft-btn', props.class]}>
-  {@render children?.()}
+	{@render children?.()}
 </button>
 ```
 
@@ -160,6 +160,7 @@ warcraftcn-ui-svelte/
 ### How `svelte-package` works
 
 Running `npx svelte-package` takes `src/lib/` and outputs a `dist/` directory with:
+
 - Preprocessed Svelte components
 - Transpiled TypeScript → JavaScript
 - Auto-generated `.d.ts` type definitions
@@ -167,17 +168,18 @@ Running `npx svelte-package` takes `src/lib/` and outputs a `dist/` directory wi
 The docs site (`src/routes/`) is **not packaged** — it's the demo/documentation.
 
 Our `package.json` exports:
+
 ```json
 {
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
-    }
-  },
-  "files": ["dist"],
-  "svelte": "./dist/index.js",
-  "sideEffects": ["**/*.css"]
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
+	"files": ["dist"],
+	"svelte": "./dist/index.js",
+	"sideEffects": ["**/*.css"]
 }
 ```
 
@@ -189,24 +191,23 @@ Our `package.json` exports:
 
 ```svelte
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+	import type { Snippet } from 'svelte';
 
-  interface ButtonProps {
-    class?: string;
-    variant?: 'default' | 'frame';
-    children?: Snippet;
-    [key: string]: unknown;
-  }
+	interface ButtonProps {
+		class?: string;
+		variant?: 'default' | 'frame';
+		children?: Snippet;
+		[key: string]: unknown;
+	}
 
-  let { class: className = '', variant = 'default', children, ...rest }: ButtonProps = $props();
+	let { class: className = '', variant = 'default', children, ...rest }: ButtonProps = $props();
 </script>
 ```
 
 ### State → `$state()`
 
 ```svelte
-let phase = $state(0);
-let isOpen = $state(false);
+let phase = $state(0); let isOpen = $state(false);
 ```
 
 ### Derived → `$derived()` / `$derived.by()`
@@ -236,8 +237,8 @@ The new preferred way — type-safe, no string keys:
 import { createContext } from 'svelte';
 
 interface AccordionCtx {
-  toggle: (value: string) => void;
-  isOpen: (value: string) => boolean;
+	toggle: (value: string) => void;
+	isOpen: (value: string) => boolean;
 }
 
 export const [getAccordionCtx, setAccordionCtx] = createContext<AccordionCtx>();
@@ -267,7 +268,7 @@ Named snippets for compound components:
 
 ```svelte
 {#snippet icon()}
-  <SomeIcon />
+	<SomeIcon />
 {/snippet}
 <Component {icon} />
 ```
@@ -276,25 +277,25 @@ Named snippets for compound components:
 
 ```svelte
 <script lang="ts">
-  const variants = {
-    default: 'bg-center px-5 py-4 bg-cover bg-no-repeat text-white hover:brightness-110',
-    frame: 'bg-center bg-cover bg-no-repeat text-white hover:brightness-110',
-  } as const;
+	const variants = {
+		default: 'bg-center px-5 py-4 bg-cover bg-no-repeat text-white hover:brightness-110',
+		frame: 'bg-center bg-cover bg-no-repeat text-white hover:brightness-110'
+	} as const;
 
-  let { variant = 'default', class: className = '', ...rest }: Props = $props();
+	let { variant = 'default', class: className = '', ...rest }: Props = $props();
 </script>
 
 <button
-  {...rest}
-  class={[
-    'fantasy inline-flex shrink-0 items-center justify-center ...',
-    variants[variant],
-    'border-solid [border-image-repeat:stretch] border-5 [border-image-slice:16_fill]',
-    variant === 'frame' ? 'wc-btn-border-frame' : 'wc-btn-border',
-    className
-  ]}
+	{...rest}
+	class={[
+		'fantasy inline-flex shrink-0 items-center justify-center ...',
+		variants[variant],
+		'border-5 border-solid [border-image-repeat:stretch] [border-image-slice:16_fill]',
+		variant === 'frame' ? 'wc-btn-border-frame' : 'wc-btn-border',
+		className
+	]}
 >
-  {@render children?.()}
+	{@render children?.()}
 </button>
 ```
 
@@ -309,27 +310,27 @@ Svelte's native class merging handles the rest. No external libraries needed.
 ```svelte
 <!-- Accordion.svelte -->
 <script lang="ts">
-  import { slide, fade } from 'svelte/transition';
-  import { setAccordionCtx } from './accordion-context';
+	import { slide, fade } from 'svelte/transition';
+	import { setAccordionCtx } from './accordion-context';
 
-  let value = $state<string[]>([]);
+	let value = $state<string[]>([]);
 
-  function toggle(itemValue: string) {
-    value = value.includes(itemValue)
-      ? value.filter(v => v !== itemValue)
-      : [...value, itemValue];
-  }
+	function toggle(itemValue: string) {
+		value = value.includes(itemValue)
+			? value.filter((v) => v !== itemValue)
+			: [...value, itemValue];
+	}
 
-  function isOpen(itemValue: string) {
-    return value.includes(itemValue);
-  }
+	function isOpen(itemValue: string) {
+		return value.includes(itemValue);
+	}
 
-  setAccordionCtx({ toggle, isOpen });
-  let { children, class: className = '' } = $props();
+	setAccordionCtx({ toggle, isOpen });
+	let { children, class: className = '' } = $props();
 </script>
 
 <div class={['flex flex-col', className]}>
-  {@render children?.()}
+	{@render children?.()}
 </div>
 ```
 
@@ -338,19 +339,21 @@ Svelte's native class merging handles the rest. No external libraries needed.
 ```svelte
 <!-- Tabs.svelte -->
 <script lang="ts">
-  import { setTabsCtx } from './tabs-context';
+	import { setTabsCtx } from './tabs-context';
 
-  let activeTab = $state('');
-  setTabsCtx($derived({
-    activeTab,
-    setActive: (v: string) => activeTab = v
-  }));
+	let activeTab = $state('');
+	setTabsCtx(
+		$derived({
+			activeTab,
+			setActive: (v: string) => (activeTab = v)
+		})
+	);
 
-  let { children, class: className = '' } = $props();
+	let { children, class: className = '' } = $props();
 </script>
 
 <div class={['flex flex-col', className]}>
-  {@render children?.()}
+	{@render children?.()}
 </div>
 ```
 
@@ -358,11 +361,15 @@ Svelte's native class merging handles the rest. No external libraries needed.
 
 ```svelte
 <script lang="ts">
-  import { fade } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
-  let open = $state(false);
-  function toggle() { open = !open; }
-  function close() { open = false; }
+	let open = $state(false);
+	function toggle() {
+		open = !open;
+	}
+	function close() {
+		open = false;
+	}
 </script>
 ```
 
@@ -371,13 +378,15 @@ A Svelte action for click-outside:
 ```ts
 // src/lib/actions/clickOutside.ts
 export function clickOutside(node: HTMLElement, callback: () => void) {
-  const handler = (e: MouseEvent) => {
-    if (!node.contains(e.target as Node)) callback();
-  };
-  document.addEventListener('click', handler, true);
-  return {
-    destroy() { document.removeEventListener('click', handler, true); }
-  };
+	const handler = (e: MouseEvent) => {
+		if (!node.contains(e.target as Node)) callback();
+	};
+	document.addEventListener('click', handler, true);
+	return {
+		destroy() {
+			document.removeEventListener('click', handler, true);
+		}
+	};
 }
 ```
 
@@ -385,16 +394,16 @@ export function clickOutside(node: HTMLElement, callback: () => void) {
 
 ```svelte
 <script lang="ts">
-  import { fade } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
-  let visible = $state(false);
-  let position = $state({ x: 0, y: 0 });
+	let visible = $state(false);
+	let position = $state({ x: 0, y: 0 });
 
-  function onmouseenter(e: MouseEvent) {
-    visible = true;
-    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-    position = { x: rect.left, y: rect.bottom + 8 };
-  }
+	function onmouseenter(e: MouseEvent) {
+		visible = true;
+		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+		position = { x: rect.left, y: rect.bottom + 8 };
+	}
 </script>
 ```
 
@@ -413,20 +422,20 @@ No Radix needed.
 ```svelte
 <!-- Toaster.svelte -->
 <script lang="ts">
-  import { slide, fade } from 'svelte/transition';
+	import { slide, fade } from 'svelte/transition';
 
-  type Toast = { id: string; message: string; faction: string; };
-  let toasts = $state<Toast[]>([]);
+	type Toast = { id: string; message: string; faction: string };
+	let toasts = $state<Toast[]>([]);
 
-  export function addToast(toast: Omit<Toast, 'id'>) {
-    const id = crypto.randomUUID();
-    toasts = [...toasts, { ...toast, id }];
-    setTimeout(() => removeToast(id), 5000);
-  }
+	export function addToast(toast: Omit<Toast, 'id'>) {
+		const id = crypto.randomUUID();
+		toasts = [...toasts, { ...toast, id }];
+		setTimeout(() => removeToast(id), 5000);
+	}
 
-  function removeToast(id: string) {
-    toasts = toasts.filter(t => t.id !== id);
-  }
+	function removeToast(id: string) {
+		toasts = toasts.filter((t) => t.id !== id);
+	}
 </script>
 ```
 
@@ -448,33 +457,33 @@ The scroll unroll animation maps to a custom Svelte transition using the `css` c
 
 These are pure styled elements with no state management:
 
-| #  | Component   | What it is                       |
-| -- | ----------- | -------------------------------- |
-| 1  | Badge       | Styled `<div>` with variants     |
-| 2  | Skeleton    | `<div>` with CSS pulse animation |
-| 3  | Spinner     | `<svg>` with CSS animation       |
-| 4  | Avatar      | `<div>` + `<img>` + CSS frame    |
-| 5  | Button      | `<button>` with border-image     |
-| 6  | Card        | Compound `<div>` components      |
-| 7  | Input       | `<input>` with border-image      |
-| 8  | Textarea    | `<textarea>` with border-image   |
-| 9  | Cursor      | Wrapper `<div>` with CSS cursors |
-| 10 | Label       | Styled `<label>`                 |
+| #   | Component | What it is                       |
+| --- | --------- | -------------------------------- |
+| 1   | Badge     | Styled `<div>` with variants     |
+| 2   | Skeleton  | `<div>` with CSS pulse animation |
+| 3   | Spinner   | `<svg>` with CSS animation       |
+| 4   | Avatar    | `<div>` + `<img>` + CSS frame    |
+| 5   | Button    | `<button>` with border-image     |
+| 6   | Card      | Compound `<div>` components      |
+| 7   | Input     | `<input>` with border-image      |
+| 8   | Textarea  | `<textarea>` with border-image   |
+| 9   | Cursor    | Wrapper `<div>` with CSS cursors |
+| 10  | Label     | Styled `<label>`                 |
 
 ### Phase 3 — Stateful Components (2–3 days)
 
 These need Svelte 5 state but no external library:
 
-| #  | Component      | Svelte 5 replacement                    |
-| -- | -------------- | --------------------------------------- |
-| 11 | Checkbox       | Native button + `$state`                |
-| 12 | RadioGroup     | Native `<input type="radio">` + `bind:group` + CSS |
-| 13 | Pagination     | `$state` page + Button component        |
-| 14 | Tooltip        | `$state` hover + `transition:fade`      |
-| 15 | Accordion      | `$state` + context + `transition:slide` |
-| 16 | Tabs           | `$state` + context                      |
-| 17 | DropdownMenu   | `$state` + `use:clickOutside` action    |
-| 18 | Toast          | Custom toaster + Svelte transitions     |
+| #   | Component    | Svelte 5 replacement                               |
+| --- | ------------ | -------------------------------------------------- |
+| 11  | Checkbox     | Native button + `$state`                           |
+| 12  | RadioGroup   | Native `<input type="radio">` + `bind:group` + CSS |
+| 13  | Pagination   | `$state` page + Button component                   |
+| 14  | Tooltip      | `$state` hover + `transition:fade`                 |
+| 15  | Accordion    | `$state` + context + `transition:slide`            |
+| 16  | Tabs         | `$state` + context                                 |
+| 17  | DropdownMenu | `$state` + `use:clickOutside` action               |
+| 18  | Toast        | Custom toaster + Svelte transitions                |
 
 ### Phase 4 — Documentation Site (3–5 days)
 
@@ -507,6 +516,7 @@ No shadcn registry. No CLI installer. Just fork or npm.
 ## CSS Migration Notes
 
 `warcraft.css` ports with **zero changes**. It uses:
+
 - Pure CSS `border-image-source` with `url()` references
 - CSS keyframe animations
 - CSS custom properties
@@ -539,6 +549,7 @@ export { default as AccordionContent } from './AccordionContent.svelte';
 ```
 
 Simple single-file components live directly in `warcraftcn/`:
+
 ```
 Button.svelte
 Badge.svelte
@@ -562,11 +573,11 @@ From the official packaging docs:
 
 ## Timeline Estimate
 
-| Phase | Description                        | Estimated Effort |
-| ----- | ---------------------------------- | ---------------- |
-| 1     | Foundation (scaffold, deps, utils) | 1 day            |
-| 2     | Zero-logic components (10)         | 2 days           |
-| 3     | Stateful components (8)            | 2–3 days         |
-| 4     | Documentation site                 | 3–5 days         |
-| 5     | Clean up                           | 1 day            |
-| **Total** |                                | **9–12 days**    |
+| Phase     | Description                        | Estimated Effort |
+| --------- | ---------------------------------- | ---------------- |
+| 1         | Foundation (scaffold, deps, utils) | 1 day            |
+| 2         | Zero-logic components (10)         | 2 days           |
+| 3         | Stateful components (8)            | 2–3 days         |
+| 4         | Documentation site                 | 3–5 days         |
+| 5         | Clean up                           | 1 day            |
+| **Total** |                                    | **9–12 days**    |

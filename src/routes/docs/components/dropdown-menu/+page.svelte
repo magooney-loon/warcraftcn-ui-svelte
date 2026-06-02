@@ -6,6 +6,7 @@
 		DropdownMenuItem,
 		DropdownMenuLabel,
 		DropdownMenuSeparator,
+		DropdownMenuShortcut,
 		Button
 	} from '$lib/components/warcraftcn/index.js';
 </script>
@@ -18,30 +19,70 @@
 	<div>
 		<h1 class="fantasy text-3xl font-bold text-amber-200">Dropdown Menu</h1>
 		<p class="mt-2 text-amber-100/70">
-			A fantasy-themed dropdown menu with Warcraft-styled borders. Composable with trigger, content,
-			items, labels, and separators.
+			A fantasy-themed dropdown menu with Warcraft-styled borders. Close by clicking outside or
+			pressing Escape.
 		</p>
 	</div>
 
-	<!-- Standard Dropdown -->
+	<!-- Standard -->
 	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">Standard Dropdown</h2>
-		<div>
-			<DropdownMenu>
-				<DropdownMenuTrigger>
-					<Button>Open Menu</Button>
-				</DropdownMenuTrigger>
-				<DropdownMenuContent>
-					<DropdownMenuLabel>Actions</DropdownMenuLabel>
-					<DropdownMenuSeparator />
-					<DropdownMenuItem>New Game</DropdownMenuItem>
-					<DropdownMenuItem>Load Game</DropdownMenuItem>
-					<DropdownMenuItem>Settings</DropdownMenuItem>
-					<DropdownMenuSeparator />
-					<DropdownMenuItem disabled>Locked Option</DropdownMenuItem>
-				</DropdownMenuContent>
-			</DropdownMenu>
-		</div>
+		<h2 class="fantasy text-xl text-amber-300">Standard</h2>
+		<DropdownMenu>
+			<DropdownMenuTrigger>
+				<Button>Open Menu</Button>
+			</DropdownMenuTrigger>
+			<DropdownMenuContent>
+				<DropdownMenuLabel>Actions</DropdownMenuLabel>
+				<DropdownMenuSeparator />
+				<DropdownMenuItem>New Game</DropdownMenuItem>
+				<DropdownMenuItem>Load Game</DropdownMenuItem>
+				<DropdownMenuItem>Settings</DropdownMenuItem>
+				<DropdownMenuSeparator />
+				<DropdownMenuItem disabled>Locked Option</DropdownMenuItem>
+			</DropdownMenuContent>
+		</DropdownMenu>
+	</section>
+
+	<!-- With Shortcuts -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">With Shortcuts</h2>
+		<DropdownMenu>
+			<DropdownMenuTrigger>
+				<Button variant="frame">Commands</Button>
+			</DropdownMenuTrigger>
+			<DropdownMenuContent>
+				<DropdownMenuLabel>Battle Commands</DropdownMenuLabel>
+				<DropdownMenuSeparator />
+				<DropdownMenuItem>
+					Attack
+					<DropdownMenuShortcut>A</DropdownMenuShortcut>
+				</DropdownMenuItem>
+				<DropdownMenuItem>
+					Stop
+					<DropdownMenuShortcut>S</DropdownMenuShortcut>
+				</DropdownMenuItem>
+				<DropdownMenuItem>
+					Hold Position
+					<DropdownMenuShortcut>H</DropdownMenuShortcut>
+				</DropdownMenuItem>
+				<DropdownMenuSeparator />
+				<DropdownMenuItem>
+					Patrol
+					<DropdownMenuShortcut>P</DropdownMenuShortcut>
+				</DropdownMenuItem>
+				<DropdownMenuItem disabled>
+					Retreat
+					<DropdownMenuShortcut>R</DropdownMenuShortcut>
+				</DropdownMenuItem>
+			</DropdownMenuContent>
+		</DropdownMenu>
+	</section>
+
+	<!-- Installation -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
+		<pre
+			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
 	</section>
 
 	<!-- Usage -->
@@ -53,8 +94,8 @@
     DropdownMenu, DropdownMenuTrigger,
     DropdownMenuContent, DropdownMenuItem,
     DropdownMenuLabel, DropdownMenuSeparator,
-    Button
-  } from '$lib/components/warcraftcn/index.js';
+    DropdownMenuShortcut
+  } from 'warcraftcn-ui-svelte';
 &lt;/script&gt;
 
 &lt;DropdownMenu&gt;
@@ -64,7 +105,10 @@
   &lt;DropdownMenuContent&gt;
     &lt;DropdownMenuLabel&gt;Actions&lt;/DropdownMenuLabel&gt;
     &lt;DropdownMenuSeparator /&gt;
-    &lt;DropdownMenuItem&gt;New Game&lt;/DropdownMenuItem&gt;
+    &lt;DropdownMenuItem&gt;
+      Attack
+      &lt;DropdownMenuShortcut&gt;A&lt;/DropdownMenuShortcut&gt;
+    &lt;/DropdownMenuItem&gt;
     &lt;DropdownMenuItem disabled&gt;Locked&lt;/DropdownMenuItem&gt;
   &lt;/DropdownMenuContent&gt;
 &lt;/DropdownMenu&gt;</code>`}</pre>

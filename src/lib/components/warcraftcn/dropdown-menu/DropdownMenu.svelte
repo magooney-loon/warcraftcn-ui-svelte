@@ -18,7 +18,13 @@
 		open = false;
 	}
 
-	setDropdownMenuCtx({ get open() { return open; }, toggle, close });
+	setDropdownMenuCtx({
+		get open() {
+			return open;
+		},
+		toggle,
+		close
+	});
 </script>
 
 <div class={['relative inline-flex', className]} data-slot="dropdown-menu">
