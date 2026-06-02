@@ -75,13 +75,6 @@
 		</div>
 	</section>
 
-	<!-- Installation -->
-	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
-		<pre
-			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
-	</section>
-
 	<!-- Usage -->
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>

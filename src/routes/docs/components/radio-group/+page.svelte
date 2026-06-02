@@ -22,7 +22,7 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Vertical (default)</h2>
 		<div class="max-w-sm">
-			<RadioGroup bind:value={selected}>
+			<RadioGroup bind:value={selected} name="heroes">
 				<div class="flex items-center gap-2">
 					<RadioGroupItem value="thrall" />
 					<Label>Thrall</Label>
@@ -85,13 +85,6 @@
 		</div>
 	</section>
 
-	<!-- Installation -->
-	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
-		<pre
-			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
-	</section>
-
 	<!-- Usage -->
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
@@ -102,7 +95,7 @@
 &lt;/script&gt;
 
 &lt;!-- Vertical (default) --&gt;
-&lt;RadioGroup bind:value={selected}&gt;
+&lt;RadioGroup bind:value={selected} name="heroes"&gt;
   &lt;div class="flex items-center gap-2"&gt;
     &lt;RadioGroupItem value="thrall" /&gt;
     &lt;Label&gt;Thrall&lt;/Label&gt;
@@ -145,10 +138,15 @@
 						<td class="px-4 py-2">"vertical" | "horizontal"</td>
 						<td class="px-4 py-2">"vertical"</td>
 					</tr>
-					<tr>
+					<tr class="border-b border-amber-900/20">
 						<td class="px-4 py-2 font-mono">disabled</td>
 						<td class="px-4 py-2">boolean</td>
 						<td class="px-4 py-2">false</td>
+					</tr>
+					<tr>
+						<td class="px-4 py-2 font-mono">name</td>
+						<td class="px-4 py-2">string</td>
+						<td class="px-4 py-2">""</td>
 					</tr>
 				</tbody>
 			</table>

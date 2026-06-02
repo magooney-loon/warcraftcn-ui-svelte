@@ -63,22 +63,17 @@
 		</div>
 	</section>
 
-	<!-- As Link -->
+	<!-- Click Handler -->
 	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">As Link</h2>
+		<h2 class="fantasy text-xl text-amber-300">Click Handler</h2>
 		<p class="text-sm text-amber-100/60">
-			Pass any HTML attribute — use with an anchor tag via wrapping or slot.
+			Any HTML attribute is forwarded to the underlying <code class="text-amber-300">&lt;button&gt;</code>.
+			Use <code class="text-amber-300">onclick</code> for click events.
 		</p>
 		<div class="flex flex-wrap items-center gap-4">
-			<Button onclick={() => {}}>Navigate</Button>
+			<Button onclick={() => alert('Quest accepted!')}>Accept Quest</Button>
+			<Button variant="frame" onclick={() => alert('Chest opened!')}>Open Chest</Button>
 		</div>
-	</section>
-
-	<!-- Installation -->
-	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
-		<pre
-			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
 	</section>
 
 	<!-- Usage -->
@@ -115,18 +110,23 @@
 						<th class="px-4 py-2 text-left text-amber-300">Default</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr class="border-b border-amber-900/20">
-						<td class="px-4 py-2 font-mono">variant</td>
-						<td class="px-4 py-2">"default" | "frame"</td>
-						<td class="px-4 py-2">"default"</td>
-					</tr>
-					<tr>
-						<td class="px-4 py-2 font-mono">disabled</td>
-						<td class="px-4 py-2">boolean</td>
-						<td class="px-4 py-2">false</td>
-					</tr>
-				</tbody>
+			<tbody>
+				<tr class="border-b border-amber-900/20">
+					<td class="px-4 py-2 font-mono">variant</td>
+					<td class="px-4 py-2">"default" | "frame"</td>
+					<td class="px-4 py-2">"default"</td>
+				</tr>
+				<tr class="border-b border-amber-900/20">
+					<td class="px-4 py-2 font-mono">style</td>
+					<td class="px-4 py-2">string</td>
+					<td class="px-4 py-2">""</td>
+				</tr>
+				<tr>
+					<td class="px-4 py-2 font-mono">class</td>
+					<td class="px-4 py-2">string</td>
+					<td class="px-4 py-2">""</td>
+				</tr>
+			</tbody>
 			</table>
 		</div>
 	</section>

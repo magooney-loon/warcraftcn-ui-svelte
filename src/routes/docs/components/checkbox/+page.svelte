@@ -63,13 +63,6 @@
 		</div>
 	</section>
 
-	<!-- Installation -->
-	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
-		<pre
-			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
-	</section>
-
 	<!-- Usage -->
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
@@ -111,10 +104,15 @@
 						<td class="px-4 py-2">boolean (bindable)</td>
 						<td class="px-4 py-2">false</td>
 					</tr>
-					<tr>
+					<tr class="border-b border-amber-900/20">
 						<td class="px-4 py-2 font-mono">disabled</td>
 						<td class="px-4 py-2">boolean</td>
 						<td class="px-4 py-2">false</td>
+					</tr>
+					<tr>
+						<td class="px-4 py-2 font-mono">id</td>
+						<td class="px-4 py-2">string</td>
+						<td class="px-4 py-2">—</td>
 					</tr>
 				</tbody>
 			</table>

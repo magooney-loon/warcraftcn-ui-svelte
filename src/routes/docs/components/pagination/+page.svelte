@@ -137,13 +137,6 @@
 		</Pagination>
 	</section>
 
-	<!-- Installation -->
-	<section class="space-y-4">
-		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
-		<pre
-			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
-	</section>
-
 	<!-- Usage -->
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
@@ -175,5 +168,63 @@
     &lt;/PaginationItem&gt;
   &lt;/PaginationContent&gt;
 &lt;/Pagination&gt;</code>`}</pre>
+	</section>
+
+	<!-- Props -->
+	<section class="space-y-4">
+		<h2 class="fantasy text-xl text-amber-300">Props</h2>
+		<p class="text-xs font-semibold tracking-wider text-amber-400 uppercase">PaginationLink</p>
+		<div class="overflow-x-auto rounded-lg border border-amber-900/30">
+			<table class="w-full text-sm text-amber-100/80">
+				<thead class="border-b border-amber-900/30 bg-black/20">
+					<tr>
+						<th class="px-4 py-2 text-left text-amber-300">Prop</th>
+						<th class="px-4 py-2 text-left text-amber-300">Type</th>
+						<th class="px-4 py-2 text-left text-amber-300">Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="border-b border-amber-900/20">
+						<td class="px-4 py-2 font-mono">isActive</td>
+						<td class="px-4 py-2">boolean</td>
+						<td class="px-4 py-2">false</td>
+					</tr>
+					<tr class="border-b border-amber-900/20">
+						<td class="px-4 py-2 font-mono">disabled</td>
+						<td class="px-4 py-2">boolean</td>
+						<td class="px-4 py-2">false</td>
+					</tr>
+					<tr>
+						<td class="px-4 py-2 font-mono">href</td>
+						<td class="px-4 py-2">string</td>
+						<td class="px-4 py-2">—</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p class="mt-2 text-xs font-semibold tracking-wider text-amber-400 uppercase">PaginationPrevious / PaginationNext</p>
+		<div class="overflow-x-auto rounded-lg border border-amber-900/30">
+			<table class="w-full text-sm text-amber-100/80">
+				<thead class="border-b border-amber-900/30 bg-black/20">
+					<tr>
+						<th class="px-4 py-2 text-left text-amber-300">Prop</th>
+						<th class="px-4 py-2 text-left text-amber-300">Type</th>
+						<th class="px-4 py-2 text-left text-amber-300">Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="border-b border-amber-900/20">
+						<td class="px-4 py-2 font-mono">href</td>
+						<td class="px-4 py-2">string</td>
+						<td class="px-4 py-2">""</td>
+					</tr>
+					<tr>
+						<td class="px-4 py-2 font-mono">disabled</td>
+						<td class="px-4 py-2">boolean</td>
+						<td class="px-4 py-2">false</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</section>
 </div>
