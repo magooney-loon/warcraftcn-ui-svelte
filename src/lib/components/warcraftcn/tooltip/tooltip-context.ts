@@ -6,6 +6,7 @@ export interface TooltipCtx {
 	visible: boolean;
 	position: { x: number; y: number };
 	variant: string;
+	side: 'top' | 'bottom' | 'left' | 'right';
 	sideOffset: number;
 	open: () => void;
 	close: () => void;

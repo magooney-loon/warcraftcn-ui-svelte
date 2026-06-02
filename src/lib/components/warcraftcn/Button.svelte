@@ -3,7 +3,7 @@
 
 	const variantMap: Record<string, string> = {
 		default: 'bg-center px-5 py-4 bg-cover bg-no-repeat text-white hover:brightness-110',
-		frame: 'bg-center bg-cover bg-no-repeat text-white hover:brightness-110'
+		frame: 'bg-center px-6 py-3.5 bg-cover bg-no-repeat text-white hover:brightness-110'
 	};
 
 	interface ButtonProps {

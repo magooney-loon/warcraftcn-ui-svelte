@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	import { tweened } from 'svelte/motion';
+	import { cubicInOut } from 'svelte/easing';
 	import type { Toast } from './toast-state.svelte.js';
 
 	interface Props {
@@ -24,25 +26,65 @@
 		info: 'text-blue-950'
 	};
 
+	const variantIcons: Record<string, string> = {
+		success: '✓',
+		error: '✗',
+		warning: '⚠',
+		info: 'ℹ'
+	};
+
 	const theme = $derived(SCROLL_THEMES[toast.faction] ?? SCROLL_THEMES.default);
 	const textColor = $derived(variantTextColors[toast.variant] ?? variantTextColors.default);
+	const icon = $derived(variantIcons[toast.variant] ?? null);
+
+	const CENTER_WIDTH = 264;
+	const ENTER_MS = 800;
+
+	const centerWidth = tweened(0, { duration: ENTER_MS, easing: cubicInOut });
+	let textVisible = $state(false);
+
+	onMount(() => {
+		centerWidth.set(CENTER_WIDTH).then(() => {
+			textVisible = true;
+		});
+
+		const exitMs = Math.max(ENTER_MS + 200, toast.durationMs - 1000);
+		const exitTimer = setTimeout(() => {
+			textVisible = false;
+			setTimeout(() => centerWidth.set(0), 150);
+		}, exitMs);
+
+		return () => clearTimeout(exitTimer);
+	});
 </script>
 
 <div
-	class="pointer-events-auto relative mx-auto flex h-28 w-75 justify-center"
+	class="pointer-events-auto relative mx-auto flex h-28 w-[300px] items-center justify-center"
 	data-slot="scroll-toast"
-	transition:fade={{ duration: 300 }}
 >
 	<!-- Left scroll handle -->
-	<div class="w-16 {theme.handleClass} shrink-0"></div>
+	<div class="z-20 h-full w-5 shrink-0 {theme.handleClass}"></div>
 
-	<!-- Center content -->
-	<div class="flex flex-1 items-center justify-center px-3 {theme.centerBgClass}">
-		<p class="text-center text-sm font-semibold {textColor}">
-			{toast.message}
-		</p>
+	<!-- Center content (animated width) -->
+	<div
+		class="relative z-10 -mx-2 h-[100px] shrink-0 overflow-hidden {theme.centerBgClass}"
+		style="width: {$centerWidth}px;"
+	>
+		<div
+			class="flex h-full w-full flex-col items-center justify-center px-2 py-2 text-center font-serif transition-all duration-500"
+			style="opacity: {textVisible ? 1 : 0}; filter: blur({textVisible ? 0 : 4}px); transform: scale({textVisible ? 1 : 0.95});"
+		>
+			<div class="flex w-full flex-row items-center justify-center gap-1">
+				{#if icon}
+					<span class="inline shrink-0 align-middle text-sm {textColor}">{icon}</span>
+				{/if}
+				<span class="fantasy truncate text-xs leading-snug align-middle {textColor}">
+					{toast.message}
+				</span>
+			</div>
+		</div>
 	</div>
 
-	<!-- Right scroll handle (mirrored) -->
-	<div class="w-16 {theme.handleClass} shrink-0" style="transform: scaleX(-1)"></div>
+	<!-- Right scroll handle (flipped) -->
+	<div class="z-20 h-full w-5 shrink-0 {theme.handleClass}" style="transform: scaleX(-1);"></div>
 </div>

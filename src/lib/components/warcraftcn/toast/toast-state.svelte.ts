@@ -1,5 +1,12 @@
 export type ScrollFaction = 'default' | 'orc' | 'elf' | 'human' | 'undead';
 export type ToastVariant = 'default' | 'success' | 'error' | 'warning' | 'info';
+export type ToastPosition =
+	| 'top-left'
+	| 'top-center'
+	| 'top-right'
+	| 'bottom-left'
+	| 'bottom-center'
+	| 'bottom-right';
 
 export interface Toast {
 	id: string;
@@ -7,6 +14,7 @@ export interface Toast {
 	faction: ScrollFaction;
 	variant: ToastVariant;
 	durationMs: number;
+	position: ToastPosition;
 }
 
 const store = $state({ toasts: [] as Toast[] });
@@ -21,6 +29,7 @@ export function addToast(
 		faction?: ScrollFaction;
 		variant?: ToastVariant;
 		durationMs?: number;
+		position?: ToastPosition;
 	} = {}
 ): string {
 	const id = crypto.randomUUID();
@@ -31,7 +40,8 @@ export function addToast(
 			message: options.message ?? '',
 			faction: options.faction ?? 'default',
 			variant: options.variant ?? 'default',
-			durationMs: options.durationMs ?? 5000
+			durationMs: options.durationMs ?? 5000,
+			position: options.position ?? 'top-center'
 		}
 	];
 	return id;
@@ -47,6 +57,7 @@ export function triggerScrollToast(
 		faction?: ScrollFaction;
 		variant?: ToastVariant;
 		durationMs?: number;
+		position?: ToastPosition;
 	} = {}
 ) {
 	const id = addToast(options);

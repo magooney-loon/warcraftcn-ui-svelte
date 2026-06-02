@@ -2,8 +2,11 @@
 	import type { Snippet } from 'svelte';
 	import { setTooltipCtx } from './tooltip-context.js';
 
+	type Side = 'top' | 'bottom' | 'left' | 'right';
+
 	interface Props {
 		variant?: 'default' | 'uncommon' | 'rare' | 'epic' | 'legendary';
+		side?: Side;
 		sideOffset?: number;
 		class?: string;
 		children?: Snippet;
@@ -12,6 +15,7 @@
 
 	let {
 		variant = 'default',
+		side = 'bottom',
 		sideOffset = 8,
 		class: className,
 		children,
@@ -31,7 +35,17 @@
 
 	function handleMouseEnter(e: MouseEvent) {
 		const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-		position = { x: rect.left, y: rect.bottom };
+
+		if (side === 'bottom') {
+			position = { x: rect.left + rect.width / 2, y: rect.bottom };
+		} else if (side === 'top') {
+			position = { x: rect.left + rect.width / 2, y: rect.top };
+		} else if (side === 'left') {
+			position = { x: rect.left, y: rect.top + rect.height / 2 };
+		} else {
+			position = { x: rect.right, y: rect.top + rect.height / 2 };
+		}
+
 		visible = true;
 	}
 
@@ -48,6 +62,9 @@
 		},
 		get variant() {
 			return variant;
+		},
+		get side() {
+			return side;
 		},
 		get sideOffset() {
 			return sideOffset;

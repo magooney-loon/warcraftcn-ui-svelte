@@ -40,8 +40,12 @@
 </script>
 
 <div
-	class={['wc-tabs-root flex w-full max-w-full flex-col', factionClasses[faction], className]}
-	data-orientation={orientation}
+	class={[
+		'wc-tabs-root flex w-full max-w-full',
+		orientation === 'vertical' ? 'flex-row' : 'flex-col',
+		factionClasses[faction],
+		className
+	]}
 >
 	{@render children?.()}
 </div>

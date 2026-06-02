@@ -35,7 +35,7 @@ export {
 } from './dropdown-menu/index.js';
 
 export { Toaster, triggerScrollToast, addToast, removeToast, getToasts } from './toast/index.js';
-export type { Toast, ScrollFaction, ToastVariant } from './toast/index.js';
+export type { Toast, ScrollFaction, ToastVariant, ToastPosition } from './toast/index.js';
 
 export {
 	Tooltip,
