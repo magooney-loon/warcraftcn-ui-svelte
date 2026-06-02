@@ -1,3 +1,11 @@
+## Project Configuration
+
+- **Language**: TypeScript
+- **Package Manager**: pnpm
+- **Add-ons**: prettier, eslint, tailwindcss, mdsvex
+
+---
+
 # CLAUDE.md — warcraftcn-ui (Original React Codebase)
 
 > Reference document for the **original** React/Next.js project, now archived in `OLD/`.  
