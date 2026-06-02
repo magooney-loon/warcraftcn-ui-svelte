@@ -10,26 +10,27 @@
 		Button,
 		Avatar
 	} from '$lib/components/warcraftcn/index.js';
+	import { asset } from '$app/paths';
 
 	const factions = [
 		{
 			faction: 'default' as const,
 			label: 'Default',
-			src: '/warcraftcn/human-peasant.webp',
+			src: asset('/warcraftcn/human-peasant.webp'),
 			alt: 'Human Peasant'
 		},
-		{ faction: 'orc' as const, label: 'Orc', src: '/warcraftcn/orc-hero.webp', alt: 'Orc Hero' },
-		{ faction: 'elf' as const, label: 'Elf', src: '/warcraftcn/elf-hero.webp', alt: 'Elf Hero' },
+		{ faction: 'orc' as const, label: 'Orc', src: asset('/warcraftcn/orc-hero.webp'), alt: 'Orc Hero' },
+		{ faction: 'elf' as const, label: 'Elf', src: asset('/warcraftcn/elf-hero.webp'), alt: 'Elf Hero' },
 		{
 			faction: 'human' as const,
 			label: 'Human',
-			src: '/warcraftcn/human-hero.webp',
+			src: asset('/warcraftcn/human-hero.webp'),
 			alt: 'Human Hero'
 		},
 		{
 			faction: 'undead' as const,
 			label: 'Undead',
-			src: '/warcraftcn/undead-hero.webp',
+			src: asset('/warcraftcn/undead-hero.webp'),
 			alt: 'Undead Hero'
 		}
 	];
