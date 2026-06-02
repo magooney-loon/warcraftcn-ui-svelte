@@ -103,7 +103,7 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
-			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
+			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code class="language-html">&lt;script&gt;
   import { Avatar } from 'warcraftcn-ui-svelte';
 &lt;/script&gt;
 

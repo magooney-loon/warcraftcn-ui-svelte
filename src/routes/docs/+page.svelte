@@ -16,7 +16,7 @@
 		<h2 class="fantasy text-xl text-amber-300">Installation</h2>
 		<p class="text-sm text-amber-100/70">Install the package via npm:</p>
 		<pre
-			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>npm install warcraftcn-ui-svelte</code>`}</pre>
+			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code class="language-html">npm install warcraftcn-ui-svelte</code>`}</pre>
 	</section>
 
 	<!-- Quick Setup -->
@@ -26,7 +26,7 @@
 			Add the <code class="text-amber-300">&lt;Toaster /&gt;</code> to your root layout for toast notifications:
 		</p>
 		<pre
-			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
+			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code class="language-html">&lt;script&gt;
   import { Toaster } from 'warcraftcn-ui-svelte';
 &lt;/script&gt;
 
@@ -39,7 +39,7 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<p class="text-sm text-amber-100/70">Import any component from the package:</p>
 		<pre
-			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
+			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code class="language-html">&lt;script&gt;
   import { Button, Card, CardHeader, CardTitle } from 'warcraftcn-ui-svelte';
 &lt;/script&gt;
 
