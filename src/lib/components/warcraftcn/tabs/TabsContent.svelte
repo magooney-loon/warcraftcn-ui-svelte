@@ -19,7 +19,7 @@
 {#if isActive}
 	<div
 		class={[
-			'wc-tab-content relative min-h-[140px] flex-1 overflow-x-auto bg-cover bg-center bg-no-repeat p-2 text-[#f3e7c4] sm:min-h-[180px] sm:p-4 md:min-h-[220px] md:w-full md:p-6 lg:min-h-[360px] lg:p-20',
+			'wc-tab-content relative min-h-35 flex-1 overflow-x-auto bg-cover bg-center bg-no-repeat p-2 text-[#f3e7c4] sm:min-h-45 sm:p-4 md:min-h-55 md:w-full md:p-6 lg:min-h-90 lg:p-20',
 			className
 		]}
 		role="tabpanel"

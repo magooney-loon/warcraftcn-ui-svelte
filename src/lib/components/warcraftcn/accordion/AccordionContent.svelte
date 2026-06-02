@@ -31,7 +31,7 @@
 			]}
 		>
 			<div class="relative my-6">
-				<div class="h-px bg-gradient-to-r from-transparent via-[#9a6f2f] to-transparent"></div>
+				<div class="h-px bg-linear-to-r from-transparent via-[#9a6f2f] to-transparent"></div>
 				<div class="absolute inset-0 -top-4 flex justify-center">
 					<span class="px-3 text-[#b98a3a] drop-shadow-[0_0_4px_rgba(120,78,24,0.45)]">✦</span>
 				</div>

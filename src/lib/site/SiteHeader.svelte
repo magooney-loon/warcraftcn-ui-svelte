@@ -3,7 +3,9 @@
 </script>
 
 <header class="sticky top-0 z-50 flex h-14 w-full shrink-0 items-center border-b bg-background/95">
-	<div class="flex h-full w-full items-center gap-2 px-2 md:mx-auto md:max-w-[1400px] md:gap-5 md:px-6">
+	<div
+		class="flex h-full w-full items-center gap-2 px-2 md:mx-auto md:max-w-350 md:gap-5 md:px-6"
+	>
 		<a href="/" class="flex items-center gap-2">
 			<img src="/warcraftcn-logo.png" alt="logo" class="h-8 w-8" />
 			<span class="font-bold">warcraftcn/ui</span>
@@ -19,7 +21,7 @@
 				href="https://github.com/TheOrcDev/warcraftcn-ui"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="fantasy rounded-md p-2 text-amber-200 hover:bg-amber-900/30 transition-colors"
+				class="fantasy rounded-md p-2 text-amber-200 transition-colors hover:bg-amber-900/30"
 				aria-label="GitHub"
 			>
 				<svg

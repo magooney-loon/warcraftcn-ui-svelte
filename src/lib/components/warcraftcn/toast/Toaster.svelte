@@ -10,7 +10,7 @@
 </script>
 
 <div
-	class={['fixed bottom-4 right-4 z-[100] flex flex-col gap-2 pointer-events-none', className]}
+	class={['pointer-events-none fixed right-4 bottom-4 z-100 flex flex-col gap-2', className]}
 	data-slot="toaster"
 >
 	{#each getToasts() as toast (toast.id)}

@@ -29,7 +29,7 @@
 </script>
 
 <div
-	class="w-[300px] h-28 relative mx-auto pointer-events-auto flex justify-center"
+	class="pointer-events-auto relative mx-auto flex h-28 w-75 justify-center"
 	data-slot="scroll-toast"
 	transition:fade={{ duration: 300 }}
 >
@@ -37,10 +37,8 @@
 	<div class="w-16 {theme.handleClass} shrink-0"></div>
 
 	<!-- Center content -->
-	<div
-		class="flex-1 flex items-center justify-center px-3 {theme.centerBgClass}"
-	>
-		<p class="text-sm font-semibold text-center {textColor}">
+	<div class="flex flex-1 items-center justify-center px-3 {theme.centerBgClass}">
+		<p class="text-center text-sm font-semibold {textColor}">
 			{toast.message}
 		</p>
 	</div>

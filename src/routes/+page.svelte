@@ -21,7 +21,7 @@
 	<!-- Decorative glow -->
 	<div class="pointer-events-none absolute inset-0 overflow-hidden">
 		<div
-			class="absolute top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(251,191,36,0.12)_0%,transparent_70%)] blur-[100px]"
+			class="absolute top-1/2 left-1/2 h-200 w-200 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(251,191,36,0.12)_0%,transparent_70%)] blur-[100px]"
 		></div>
 	</div>
 
