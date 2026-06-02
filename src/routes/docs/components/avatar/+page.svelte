@@ -22,7 +22,7 @@
 		<div class="flex flex-wrap items-end gap-6">
 			<Avatar
 				faction="default"
-				size="sm"
+				size="lg"
 				src="/warcraftcn/human-peasant.webp"
 				alt="Human Peasant"
 			/>
@@ -34,7 +34,7 @@
 			/>
 			<Avatar
 				faction="default"
-				size="lg"
+				size="sm"
 				src="/warcraftcn/human-peasant.webp"
 				alt="Human Peasant"
 			/>
@@ -45,9 +45,9 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Orc — All Sizes</h2>
 		<div class="flex flex-wrap items-end gap-6">
-			<Avatar faction="orc" size="sm" src="/warcraftcn/orc-hero.webp" alt="Orc Hero" />
-			<Avatar faction="orc" size="md" src="/warcraftcn/orc-hero.webp" alt="Orc Hero" />
 			<Avatar faction="orc" size="lg" src="/warcraftcn/orc-hero.webp" alt="Orc Hero" />
+			<Avatar faction="orc" size="md" src="/warcraftcn/orc-hero.webp" alt="Orc Hero" />
+			<Avatar faction="orc" size="sm" src="/warcraftcn/orc-hero.webp" alt="Orc Hero" />
 		</div>
 	</section>
 
@@ -55,9 +55,9 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Elf — All Sizes</h2>
 		<div class="flex flex-wrap items-end gap-6">
-			<Avatar faction="elf" size="sm" src="/warcraftcn/elf-hero.webp" alt="Elf Hero" />
-			<Avatar faction="elf" size="md" src="/warcraftcn/elf-hero.webp" alt="Elf Hero" />
 			<Avatar faction="elf" size="lg" src="/warcraftcn/elf-hero.webp" alt="Elf Hero" />
+			<Avatar faction="elf" size="md" src="/warcraftcn/elf-hero.webp" alt="Elf Hero" />
+			<Avatar faction="elf" size="sm" src="/warcraftcn/elf-hero.webp" alt="Elf Hero" />
 		</div>
 	</section>
 
@@ -65,9 +65,9 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Human — All Sizes</h2>
 		<div class="flex flex-wrap items-end gap-6">
-			<Avatar faction="human" size="sm" src="/warcraftcn/human-hero.webp" alt="Human Hero" />
-			<Avatar faction="human" size="md" src="/warcraftcn/human-hero.webp" alt="Human Hero" />
 			<Avatar faction="human" size="lg" src="/warcraftcn/human-hero.webp" alt="Human Hero" />
+			<Avatar faction="human" size="md" src="/warcraftcn/human-hero.webp" alt="Human Hero" />
+			<Avatar faction="human" size="sm" src="/warcraftcn/human-hero.webp" alt="Human Hero" />
 		</div>
 	</section>
 
@@ -75,9 +75,9 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Undead — All Sizes</h2>
 		<div class="flex flex-wrap items-end gap-6">
-			<Avatar faction="undead" size="sm" src="/warcraftcn/undead-hero.webp" alt="Undead Hero" />
-			<Avatar faction="undead" size="md" src="/warcraftcn/undead-hero.webp" alt="Undead Hero" />
 			<Avatar faction="undead" size="lg" src="/warcraftcn/undead-hero.webp" alt="Undead Hero" />
+			<Avatar faction="undead" size="md" src="/warcraftcn/undead-hero.webp" alt="Undead Hero" />
+			<Avatar faction="undead" size="sm" src="/warcraftcn/undead-hero.webp" alt="Undead Hero" />
 		</div>
 	</section>
 
