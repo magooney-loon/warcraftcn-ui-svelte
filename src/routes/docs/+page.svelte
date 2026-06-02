@@ -82,9 +82,9 @@
 	<!-- Components -->
 	<section class="space-y-3">
 		<h2 class="fantasy text-xl text-amber-300">Components</h2>
-		<p class="text-sm text-amber-100/70">All 18 components available:</p>
+		<p class="text-sm text-amber-100/70">All 19 components available:</p>
 		<div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
-			{#each ['Accordion', 'Avatar', 'Badge', 'Button', 'Card', 'Checkbox', 'Cursor', 'DropdownMenu', 'Input', 'Label', 'Pagination', 'RadioGroup', 'Skeleton', 'Spinner', 'Tabs', 'Textarea', 'Toast', 'Tooltip'] as name (name)}
+			{#each ['Accordion', 'Avatar', 'Badge', 'Button', 'Card', 'Checkbox', 'Cursor', 'DropdownMenu', 'Input', 'Label', 'Modal', 'Pagination', 'RadioGroup', 'Skeleton', 'Spinner', 'Tabs', 'Textarea', 'Toast', 'Tooltip'] as name (name)}
 				<a
 					href="/docs/components/{name.toLowerCase().replace(' ', '-')}"
 					class="rounded border border-amber-900/20 bg-black/20 px-3 py-1 text-xs text-amber-100/60 transition-colors hover:border-amber-700/40 hover:text-amber-200"

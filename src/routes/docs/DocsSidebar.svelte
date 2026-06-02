@@ -16,6 +16,7 @@
 		{ name: 'Dropdown Menu', href: '/docs/components/dropdown-menu' },
 		{ name: 'Input', href: '/docs/components/input' },
 		{ name: 'Label', href: '/docs/components/label' },
+		{ name: 'Modal', href: '/docs/components/modal' },
 		{ name: 'Pagination', href: '/docs/components/pagination' },
 		{ name: 'Radio Group', href: '/docs/components/radio-group' },
 		{ name: 'Skeleton', href: '/docs/components/skeleton' },

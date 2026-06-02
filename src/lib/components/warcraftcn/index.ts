@@ -58,3 +58,5 @@ export {
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './accordion/index.js';
 
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs/index.js';
+
+export { Modal, ModalTrigger, ModalContent } from './modal/index.js';

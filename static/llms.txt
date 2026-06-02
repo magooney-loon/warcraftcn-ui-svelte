@@ -338,6 +338,52 @@ Fantasy-styled label with required indicator and muted variant.
 
 ---
 
+### Modal
+
+Modal dialog built on top of Card. Supports backdrop dismiss, Escape key, and two sizes.
+
+```svelte
+<script>
+  import {
+    Modal, ModalTrigger, ModalContent,
+    CardHeader, CardTitle, CardDescription,
+    CardContent, CardFooter, Button
+  } from 'warcraftcn-ui-svelte';
+</script>
+
+<Modal>
+  <ModalTrigger>
+    <Button>Open Modal</Button>
+  </ModalTrigger>
+  <ModalContent>
+    <CardHeader>
+      <CardTitle>Quest Offer</CardTitle>
+      <CardDescription>A mysterious task...</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p>Retrieve the enchanted amulet.</p>
+    </CardContent>
+    <CardFooter>
+      <Button variant="frame">Accept Quest</Button>
+    </CardFooter>
+  </ModalContent>
+</Modal>
+```
+
+**Modal Props:**
+- `open?: boolean` — Bindable. Controls the open/closed state. Default: `false`.
+- `class?: string`
+
+**ModalTrigger Props:**
+- `class?: string`
+- All native `<button>` HTML attributes are forwarded.
+
+**ModalContent Props:**
+- `size?: 'default' | 'sm'` — Matches the Card size. Default: `'default'`.
+- `class?: string`
+
+---
+
 ### Pagination
 
 Navigation component for paging through content. Uses Button's frame border styling.
