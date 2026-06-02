@@ -928,27 +928,27 @@
 }
 
 .scroll-handle-default {
-	background-image: url('../assets/toast/scroll-handle.png');
+	background-image: url('../assets/toast/scroll-handle.webp');
 	background-size: 100% 100%;
 }
 
 .scroll-handle-human {
-	background-image: url('../assets/toast/scroll-handle-human.png');
+	background-image: url('../assets/toast/scroll-handle-human.webp');
 	background-size: 100% 100%;
 }
 
 .scroll-handle-undead {
-	background-image: url('../assets/toast/scroll-handle-undead.png');
+	background-image: url('../assets/toast/scroll-handle-undead.webp');
 	background-size: 100% 100%;
 }
 
 .scroll-handle-orc {
-	background-image: url('../assets/toast/scroll-handle-orc.png');
+	background-image: url('../assets/toast/scroll-handle-orc.webp');
 	background-size: 100% 100%;
 }
 
 .scroll-handle-elf {
-	background-image: url('../assets/toast/scroll-handle-elf.png');
+	background-image: url('../assets/toast/scroll-handle-elf.webp');
 	background-size: 100% 100%;
 }
 

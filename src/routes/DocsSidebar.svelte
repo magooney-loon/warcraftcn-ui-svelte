@@ -62,7 +62,7 @@
 		</svg>
 	</button>
 	<div class="ml-3 flex items-center gap-2">
-		<img src={asset('/warcraftcn-logo.png')} alt="warcraftcn" class="h-6 w-6" />
+		<img src={asset('/warcraftcn-logo.webp')} alt="warcraftcn" class="h-6 w-6" />
 		<span class="fantasy text-sm font-bold text-amber-200">warcraftcn/ui</span>
 	</div>
 </div>
@@ -86,7 +86,7 @@
 		class:-translate-x-full={!sidebarOpen}
 	>
 		<div class="mb-6 flex items-center gap-2">
-			<img src={asset('/warcraftcn-logo.png')} alt="warcraftcn" class="h-7 w-7" />
+			<img src={asset('/warcraftcn-logo.webp')} alt="warcraftcn" class="h-7 w-7" />
 			<span class="fantasy text-sm font-bold text-amber-200">warcraftcn/ui</span>
 		</div>
 
