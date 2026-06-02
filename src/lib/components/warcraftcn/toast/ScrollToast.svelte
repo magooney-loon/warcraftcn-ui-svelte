@@ -40,25 +40,39 @@
 	const CENTER_WIDTH = 264;
 	const ENTER_MS = 800;
 
+	// Phase: 0 = entering, 1 = open, 2 = closing
+	let phase = $state(0);
+
 	const centerWidth = new Tween(0, { duration: ENTER_MS, easing: cubicInOut });
-	let textVisible = $state(false);
+	const outerOpacity = new Tween(0, { duration: 300, easing: cubicInOut });
+	// Will be initialized in onMount based on position
+	let startY = 0;
+	const outerY = new Tween(0, { duration: 300, easing: cubicInOut });
 
 	onMount(() => {
+		startY = toast.position.startsWith('top') ? -20 : 20;
+
+		// Enter: animate in from offset
+		outerY.set(startY, { duration: 0 });
+		outerOpacity.target = 1;
+		outerY.target = 0;
 		centerWidth.target = CENTER_WIDTH;
 
-		// Watch for the tween to reach its target
-		const enterCheck = setTimeout(() => {
-			textVisible = true;
-		}, ENTER_MS + 50);
+		const enterTimer = setTimeout(() => {
+			phase = 1;
+		}, ENTER_MS);
 
+		// Exit: close scroll + fade out
 		const exitMs = Math.max(ENTER_MS + 200, toast.durationMs - 1000);
 		const exitTimer = setTimeout(() => {
-			textVisible = false;
-			setTimeout(() => (centerWidth.target = 0), 150);
+			phase = 2;
+			centerWidth.target = 0;
+			outerOpacity.target = 0;
+			outerY.target = startY;
 		}, exitMs);
 
 		return () => {
-			clearTimeout(enterCheck);
+			clearTimeout(enterTimer);
 			clearTimeout(exitTimer);
 		};
 	});
@@ -67,6 +81,7 @@
 <div
 	class="pointer-events-auto relative mx-auto flex h-28 w-75 items-center justify-center"
 	data-slot="scroll-toast"
+	style="opacity: {outerOpacity.current}; transform: translateY({outerY.current}px);"
 >
 	<!-- Left scroll handle -->
 	<div class="z-20 h-full w-5 shrink-0 {theme.handleClass}"></div>
@@ -78,9 +93,9 @@
 	>
 		<div
 			class="flex h-full w-full flex-col items-center justify-center px-2 py-2 text-center font-serif transition-all duration-500"
-			style="opacity: {textVisible ? 1 : 0}; filter: blur({textVisible
+			style="opacity: {phase === 1 ? 1 : 0}; filter: blur({phase === 1
 				? 0
-				: 4}px); transform: scale({textVisible ? 1 : 0.95});"
+				: 4}px); transform: scale({phase === 1 ? 1 : 0.95});"
 		>
 			<div class="flex w-full flex-row items-center justify-center gap-1">
 				{#if icon}

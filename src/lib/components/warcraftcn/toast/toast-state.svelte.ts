@@ -61,5 +61,6 @@ export function triggerScrollToast(
 	} = {}
 ) {
 	const id = addToast(options);
-	setTimeout(() => removeToast(id), options.durationMs ?? 5000);
+	// Add 500ms buffer for the fade-out transition after the scroll closes
+	setTimeout(() => removeToast(id), (options.durationMs ?? 5000) + 500);
 }

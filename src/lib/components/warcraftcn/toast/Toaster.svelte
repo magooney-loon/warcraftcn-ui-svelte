@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getToasts, type ToastPosition } from './toast-state.svelte.js';
+	import { flip } from 'svelte/animate';
 	import ScrollToast from './ScrollToast.svelte';
 
 	interface Props {
@@ -51,7 +52,9 @@
 		data-slot="toaster"
 	>
 		{#each toasts as toast (toast.id)}
-			<ScrollToast {toast} />
+			<div animate:flip={{ duration: 300 }}>
+				<ScrollToast {toast} />
+			</div>
 		{/each}
 	</div>
 {/each}
