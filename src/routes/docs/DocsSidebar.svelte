@@ -1,30 +1,31 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
+	import { resolve, asset } from '$app/paths';
 	import type { Snippet } from 'svelte';
 
-	const sections = [{ name: 'Get Started', href: '/docs' }];
+	const sections = [{ name: 'Get Started', href: resolve('/docs') }];
 
 	const components = [
-		{ name: 'Accordion', href: '/docs/components/accordion' },
-		{ name: 'Avatar', href: '/docs/components/avatar' },
-		{ name: 'Badge', href: '/docs/components/badge' },
-		{ name: 'Button', href: '/docs/components/button' },
-		{ name: 'Card', href: '/docs/components/card' },
-		{ name: 'Checkbox', href: '/docs/components/checkbox' },
-		{ name: 'Cursor', href: '/docs/components/cursor' },
-		{ name: 'Dropdown Menu', href: '/docs/components/dropdown-menu' },
-		{ name: 'Input', href: '/docs/components/input' },
-		{ name: 'Label', href: '/docs/components/label' },
-		{ name: 'Modal', href: '/docs/components/modal' },
-		{ name: 'Pagination', href: '/docs/components/pagination' },
-		{ name: 'Radio Group', href: '/docs/components/radio-group' },
-		{ name: 'Skeleton', href: '/docs/components/skeleton' },
-		{ name: 'Spinner', href: '/docs/components/spinner' },
-		{ name: 'Tabs', href: '/docs/components/tabs' },
-		{ name: 'Textarea', href: '/docs/components/textarea' },
-		{ name: 'Toast', href: '/docs/components/toast' },
-		{ name: 'Tooltip', href: '/docs/components/tooltip' }
+		{ name: 'Accordion', href: resolve('/docs/components/accordion') },
+		{ name: 'Avatar', href: resolve('/docs/components/avatar') },
+		{ name: 'Badge', href: resolve('/docs/components/badge') },
+		{ name: 'Button', href: resolve('/docs/components/button') },
+		{ name: 'Card', href: resolve('/docs/components/card') },
+		{ name: 'Checkbox', href: resolve('/docs/components/checkbox') },
+		{ name: 'Cursor', href: resolve('/docs/components/cursor') },
+		{ name: 'Dropdown Menu', href: resolve('/docs/components/dropdown-menu') },
+		{ name: 'Input', href: resolve('/docs/components/input') },
+		{ name: 'Label', href: resolve('/docs/components/label') },
+		{ name: 'Modal', href: resolve('/docs/components/modal') },
+		{ name: 'Pagination', href: resolve('/docs/components/pagination') },
+		{ name: 'Radio Group', href: resolve('/docs/components/radio-group') },
+		{ name: 'Skeleton', href: resolve('/docs/components/skeleton') },
+		{ name: 'Spinner', href: resolve('/docs/components/spinner') },
+		{ name: 'Tabs', href: resolve('/docs/components/tabs') },
+		{ name: 'Textarea', href: resolve('/docs/components/textarea') },
+		{ name: 'Toast', href: resolve('/docs/components/toast') },
+		{ name: 'Tooltip', href: resolve('/docs/components/tooltip') }
 	];
 
 	let sidebarOpen = $state(false);
@@ -61,7 +62,7 @@
 		</svg>
 	</button>
 	<div class="ml-3 flex items-center gap-2">
-		<img src="/warcraftcn-logo.png" alt="warcraftcn" class="h-6 w-6" />
+		<img src={asset('/warcraftcn-logo.png')} alt="warcraftcn" class="h-6 w-6" />
 		<span class="fantasy text-sm font-bold text-amber-200">warcraftcn/ui</span>
 	</div>
 </div>
@@ -85,7 +86,7 @@
 		class:-translate-x-full={!sidebarOpen}
 	>
 		<div class="mb-6 flex items-center gap-2">
-			<img src="/warcraftcn-logo.png" alt="warcraftcn" class="h-7 w-7" />
+			<img src={asset('/warcraftcn-logo.png')} alt="warcraftcn" class="h-7 w-7" />
 			<span class="fantasy text-sm font-bold text-amber-200">warcraftcn/ui</span>
 		</div>
 
@@ -94,8 +95,7 @@
 				<a
 					href={sec.href}
 					onclick={() => (sidebarOpen = false)}
-					class="rounded px-3 py-1.5 text-sm font-medium transition-colors hover:bg-amber-900/30 hover:text-amber-100 {$page
-						.url.pathname === sec.href
+					class="rounded px-3 py-1.5 text-sm font-medium transition-colors hover:bg-amber-900/30 hover:text-amber-100 {page.url.pathname === sec.href
 						? 'border-l-2 border-amber-400 bg-amber-900/40 text-amber-100'
 						: 'text-amber-100/70'}"
 				>
@@ -112,8 +112,7 @@
 				<a
 					href={comp.href}
 					onclick={() => (sidebarOpen = false)}
-					class="rounded px-3 py-1.5 text-sm transition-colors hover:bg-amber-900/30 hover:text-amber-100 {$page
-						.url.pathname === comp.href
+					class="rounded px-3 py-1.5 text-sm transition-colors hover:bg-amber-900/30 hover:text-amber-100 {page.url.pathname === comp.href
 						? 'border-l-2 border-amber-400 bg-amber-900/40 text-amber-100'
 						: 'text-amber-100/70'}"
 				>
@@ -124,7 +123,7 @@
 
 		<div class="mt-2 border-t border-amber-900/20 pt-2">
 			<a
-				href="/llms.txt"
+				href={asset('/llms.txt')}
 				target="_blank"
 				class="flex items-center gap-2 rounded px-3 py-1.5 text-xs text-amber-100/40 transition-colors hover:text-amber-100/70"
 			>

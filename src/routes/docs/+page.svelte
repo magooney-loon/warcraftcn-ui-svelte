@@ -1,3 +1,9 @@
+<script lang="ts">
+	import { resolve } from '$app/paths';
+
+	const path = resolve as unknown as (p: string) => string;
+</script>
+
 <svelte:head>
 	<title>Get Started — warcraftcn/ui</title>
 </svelte:head>
@@ -86,10 +92,10 @@
 		<div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
 			{#each ['Accordion', 'Avatar', 'Badge', 'Button', 'Card', 'Checkbox', 'Cursor', 'DropdownMenu', 'Input', 'Label', 'Modal', 'Pagination', 'RadioGroup', 'Skeleton', 'Spinner', 'Tabs', 'Textarea', 'Toast', 'Tooltip'] as name (name)}
 				<a
-					href="/docs/components/{name
+					href={path(`/docs/components/${name
 						.replace(/([A-Z])/g, '-$1')
 						.toLowerCase()
-						.slice(1)}"
+						.slice(1)}`)}
 					class="rounded border border-amber-900/20 bg-black/20 px-3 py-1 text-xs text-amber-100/60 transition-colors hover:border-amber-700/40 hover:text-amber-200"
 				>
 					{name}

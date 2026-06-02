@@ -31,7 +31,9 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - run: npx vite build
+      - run: pnpm run build
+        env:
+          BASE_PATH: '/${{ github.event.repository.name }}'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

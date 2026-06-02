@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Avatar } from '$lib/components/warcraftcn/index.js';
+	import { asset } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -23,19 +24,19 @@
 			<Avatar
 				faction="default"
 				size="lg"
-				src="/warcraftcn/human-peasant.webp"
+				src={asset('/warcraftcn/human-peasant.webp')}
 				alt="Human Peasant"
 			/>
 			<Avatar
 				faction="default"
 				size="md"
-				src="/warcraftcn/human-peasant.webp"
+				src={asset('/warcraftcn/human-peasant.webp')}
 				alt="Human Peasant"
 			/>
 			<Avatar
 				faction="default"
 				size="sm"
-				src="/warcraftcn/human-peasant.webp"
+				src={asset('/warcraftcn/human-peasant.webp')}
 				alt="Human Peasant"
 			/>
 		</div>
@@ -45,9 +46,9 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Orc — All Sizes</h2>
 		<div class="flex flex-wrap items-end gap-6">
-			<Avatar faction="orc" size="lg" src="/warcraftcn/orc-hero.webp" alt="Orc Hero" />
-			<Avatar faction="orc" size="md" src="/warcraftcn/orc-hero.webp" alt="Orc Hero" />
-			<Avatar faction="orc" size="sm" src="/warcraftcn/orc-hero.webp" alt="Orc Hero" />
+			<Avatar faction="orc" size="lg" src={asset('/warcraftcn/orc-hero.webp')} alt="Orc Hero" />
+			<Avatar faction="orc" size="md" src={asset('/warcraftcn/orc-hero.webp')} alt="Orc Hero" />
+			<Avatar faction="orc" size="sm" src={asset('/warcraftcn/orc-hero.webp')} alt="Orc Hero" />
 		</div>
 	</section>
 
@@ -55,9 +56,9 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Elf — All Sizes</h2>
 		<div class="flex flex-wrap items-end gap-6">
-			<Avatar faction="elf" size="lg" src="/warcraftcn/elf-hero.webp" alt="Elf Hero" />
-			<Avatar faction="elf" size="md" src="/warcraftcn/elf-hero.webp" alt="Elf Hero" />
-			<Avatar faction="elf" size="sm" src="/warcraftcn/elf-hero.webp" alt="Elf Hero" />
+			<Avatar faction="elf" size="lg" src={asset('/warcraftcn/elf-hero.webp')} alt="Elf Hero" />
+			<Avatar faction="elf" size="md" src={asset('/warcraftcn/elf-hero.webp')} alt="Elf Hero" />
+			<Avatar faction="elf" size="sm" src={asset('/warcraftcn/elf-hero.webp')} alt="Elf Hero" />
 		</div>
 	</section>
 
@@ -65,9 +66,9 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Human — All Sizes</h2>
 		<div class="flex flex-wrap items-end gap-6">
-			<Avatar faction="human" size="lg" src="/warcraftcn/human-hero.webp" alt="Human Hero" />
-			<Avatar faction="human" size="md" src="/warcraftcn/human-hero.webp" alt="Human Hero" />
-			<Avatar faction="human" size="sm" src="/warcraftcn/human-hero.webp" alt="Human Hero" />
+			<Avatar faction="human" size="lg" src={asset('/warcraftcn/human-hero.webp')} alt="Human Hero" />
+			<Avatar faction="human" size="md" src={asset('/warcraftcn/human-hero.webp')} alt="Human Hero" />
+			<Avatar faction="human" size="sm" src={asset('/warcraftcn/human-hero.webp')} alt="Human Hero" />
 		</div>
 	</section>
 
@@ -75,9 +76,9 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Undead — All Sizes</h2>
 		<div class="flex flex-wrap items-end gap-6">
-			<Avatar faction="undead" size="lg" src="/warcraftcn/undead-hero.webp" alt="Undead Hero" />
-			<Avatar faction="undead" size="md" src="/warcraftcn/undead-hero.webp" alt="Undead Hero" />
-			<Avatar faction="undead" size="sm" src="/warcraftcn/undead-hero.webp" alt="Undead Hero" />
+			<Avatar faction="undead" size="lg" src={asset('/warcraftcn/undead-hero.webp')} alt="Undead Hero" />
+			<Avatar faction="undead" size="md" src={asset('/warcraftcn/undead-hero.webp')} alt="Undead Hero" />
+			<Avatar faction="undead" size="sm" src={asset('/warcraftcn/undead-hero.webp')} alt="Undead Hero" />
 		</div>
 	</section>
 
