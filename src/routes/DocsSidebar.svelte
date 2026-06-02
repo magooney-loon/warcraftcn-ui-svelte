@@ -4,28 +4,28 @@
 	import { resolve, asset } from '$app/paths';
 	import type { Snippet } from 'svelte';
 
-	const sections = [{ name: 'Get Started', href: resolve('/docs') }];
+	const sections = [{ name: 'Get Started', href: resolve('/') }];
 
 	const components = [
-		{ name: 'Accordion', href: resolve('/docs/components/accordion') },
-		{ name: 'Avatar', href: resolve('/docs/components/avatar') },
-		{ name: 'Badge', href: resolve('/docs/components/badge') },
-		{ name: 'Button', href: resolve('/docs/components/button') },
-		{ name: 'Card', href: resolve('/docs/components/card') },
-		{ name: 'Checkbox', href: resolve('/docs/components/checkbox') },
-		{ name: 'Cursor', href: resolve('/docs/components/cursor') },
-		{ name: 'Dropdown Menu', href: resolve('/docs/components/dropdown-menu') },
-		{ name: 'Input', href: resolve('/docs/components/input') },
-		{ name: 'Label', href: resolve('/docs/components/label') },
-		{ name: 'Modal', href: resolve('/docs/components/modal') },
-		{ name: 'Pagination', href: resolve('/docs/components/pagination') },
-		{ name: 'Radio Group', href: resolve('/docs/components/radio-group') },
-		{ name: 'Skeleton', href: resolve('/docs/components/skeleton') },
-		{ name: 'Spinner', href: resolve('/docs/components/spinner') },
-		{ name: 'Tabs', href: resolve('/docs/components/tabs') },
-		{ name: 'Textarea', href: resolve('/docs/components/textarea') },
-		{ name: 'Toast', href: resolve('/docs/components/toast') },
-		{ name: 'Tooltip', href: resolve('/docs/components/tooltip') }
+		{ name: 'Accordion', href: resolve('/components/accordion') },
+		{ name: 'Avatar', href: resolve('/components/avatar') },
+		{ name: 'Badge', href: resolve('/components/badge') },
+		{ name: 'Button', href: resolve('/components/button') },
+		{ name: 'Card', href: resolve('/components/card') },
+		{ name: 'Checkbox', href: resolve('/components/checkbox') },
+		{ name: 'Cursor', href: resolve('/components/cursor') },
+		{ name: 'Dropdown Menu', href: resolve('/components/dropdown-menu') },
+		{ name: 'Input', href: resolve('/components/input') },
+		{ name: 'Label', href: resolve('/components/label') },
+		{ name: 'Modal', href: resolve('/components/modal') },
+		{ name: 'Pagination', href: resolve('/components/pagination') },
+		{ name: 'Radio Group', href: resolve('/components/radio-group') },
+		{ name: 'Skeleton', href: resolve('/components/skeleton') },
+		{ name: 'Spinner', href: resolve('/components/spinner') },
+		{ name: 'Tabs', href: resolve('/components/tabs') },
+		{ name: 'Textarea', href: resolve('/components/textarea') },
+		{ name: 'Toast', href: resolve('/components/toast') },
+		{ name: 'Tooltip', href: resolve('/components/tooltip') }
 	];
 
 	let sidebarOpen = $state(false);
