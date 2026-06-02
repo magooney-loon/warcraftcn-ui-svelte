@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import { page } from '$app/stores';
 	import type { Snippet } from 'svelte';
 
 	const sections = [{ name: 'Get Started', href: '/docs' }];
@@ -92,7 +93,7 @@
 				<a
 					href={sec.href}
 					onclick={() => (sidebarOpen = false)}
-					class="rounded px-3 py-1.5 text-sm font-medium text-amber-100 transition-colors hover:bg-amber-900/30 hover:text-amber-100"
+					class="rounded px-3 py-1.5 text-sm font-medium transition-colors hover:bg-amber-900/30 hover:text-amber-100 {$page.url.pathname === sec.href ? 'text-amber-100 bg-amber-900/40 border-l-2 border-amber-400' : 'text-amber-100/70'}"
 				>
 					{sec.name}
 				</a>
@@ -107,7 +108,7 @@
 				<a
 					href={comp.href}
 					onclick={() => (sidebarOpen = false)}
-					class="rounded px-3 py-1.5 text-sm text-amber-100/70 transition-colors hover:bg-amber-900/30 hover:text-amber-100"
+					class="rounded px-3 py-1.5 text-sm transition-colors hover:bg-amber-900/30 hover:text-amber-100 {$page.url.pathname === comp.href ? 'text-amber-100 bg-amber-900/40 border-l-2 border-amber-400' : 'text-amber-100/70'}"
 				>
 					{comp.name}
 				</a>
