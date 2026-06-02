@@ -5,18 +5,24 @@
 	interface Props {
 		class?: string;
 		children?: Snippet;
-		[key: string]: unknown;
 	}
 
-	let { class: className = '', children, ...rest }: Props = $props();
+	let { class: className = '', children }: Props = $props();
 	const ctx = getModalCtx();
 </script>
 
-<button
-	{...rest}
-	class={['inline-flex cursor-pointer items-center justify-center outline-none', className]}
+<div
+	class={['inline-flex cursor-pointer', className]}
 	data-slot="modal-trigger"
 	onclick={ctx.toggle}
+	role="button"
+	tabindex="0"
+	onkeydown={(e) => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			ctx.toggle();
+		}
+	}}
 >
 	{@render children?.()}
-</button>
+</div>

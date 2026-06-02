@@ -80,7 +80,7 @@
 <div class="flex min-h-screen">
 	<!-- Sidebar -->
 	<aside
-		class="fixed top-0 left-0 z-50 h-screen w-64 border-r border-amber-900/20 bg-black/95 p-4 transition-transform duration-200 md:sticky md:z-auto md:shrink-0 md:translate-x-0 md:bg-black/40"
+		class="fixed top-0 left-0 z-50 h-screen w-64 overflow-y-auto border-r border-amber-900/20 bg-black/95 p-4 transition-transform duration-200 md:sticky md:z-auto md:shrink-0 md:translate-x-0 md:bg-black/40"
 		class:translate-x-0={sidebarOpen}
 		class:-translate-x-full={!sidebarOpen}
 	>
@@ -122,7 +122,7 @@
 			{/each}
 		</nav>
 
-		<div class="mt-8 border-t border-amber-900/20 pt-4">
+		<div class="mt-2 border-t border-amber-900/20 pt-2">
 			<a
 				href="/llms.txt"
 				target="_blank"
