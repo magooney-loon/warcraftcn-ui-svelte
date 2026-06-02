@@ -119,18 +119,18 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-		  import {
-		    Accordion, AccordionItem,
-		    AccordionTrigger, AccordionContent
-		  } from 'warcraftcn-ui-svelte';
-		&lt;/script&gt;
+  import {
+    Accordion, AccordionItem,
+    AccordionTrigger, AccordionContent
+  } from 'warcraftcn-ui-svelte';
+&lt;/script&gt;
 
-		&lt;Accordion type="multiple"&gt;
-		  &lt;AccordionItem value="item-1"&gt;
-		    &lt;AccordionTrigger value="item-1" icon="sword"&gt;Title&lt;/AccordionTrigger&gt;
-		    &lt;AccordionContent value="item-1"&gt;Content here&lt;/AccordionContent&gt;
-		  &lt;/AccordionItem&gt;
-		&lt;/Accordion&gt;</code>`}</pre>
+&lt;Accordion type="multiple"&gt;
+  &lt;AccordionItem value="item-1"&gt;
+    &lt;AccordionTrigger value="item-1" icon="sword"&gt;Title&lt;/AccordionTrigger&gt;
+    &lt;AccordionContent value="item-1"&gt;Content here&lt;/AccordionContent&gt;
+  &lt;/AccordionItem&gt;
+&lt;/Accordion&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

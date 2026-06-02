@@ -68,12 +68,12 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-		  import { Checkbox } from 'warcraftcn-ui-svelte';
-		  let checked = $state(false);
-		&lt;/script&gt;
+  import { Checkbox } from 'warcraftcn-ui-svelte';
+  let checked = $state(false);
+&lt;/script&gt;
 
-		&lt;Checkbox bind:checked faction="orc"&gt;Orc Checkbox&lt;/Checkbox&gt;
-		&lt;Checkbox disabled&gt;Disabled&lt;/Checkbox&gt;</code>`}</pre>
+&lt;Checkbox bind:checked faction="orc"&gt;Orc Checkbox&lt;/Checkbox&gt;
+&lt;Checkbox disabled&gt;Disabled&lt;/Checkbox&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

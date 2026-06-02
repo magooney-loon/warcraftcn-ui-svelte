@@ -90,16 +90,16 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-		  import { RadioGroup, RadioGroupItem, Label } from 'warcraftcn-ui-svelte';
-		  let selected = $state('thrall');
-		&lt;/script&gt;
+  import { RadioGroup, RadioGroupItem, Label } from 'warcraftcn-ui-svelte';
+  let selected = $state('thrall');
+&lt;/script&gt;
 
-		&lt;RadioGroup bind:value={selected} name="heroes"&gt;
-		  &lt;div class="flex items-center gap-2"&gt;
-		    &lt;RadioGroupItem value="thrall" /&gt;
-		    &lt;Label&gt;Thrall&lt;/Label&gt;
-		  &lt;/div&gt;
-		&lt;/RadioGroup&gt;</code>`}</pre>
+&lt;RadioGroup bind:value={selected} name="heroes"&gt;
+  &lt;div class="flex items-center gap-2"&gt;
+    &lt;RadioGroupItem value="thrall" /&gt;
+    &lt;Label&gt;Thrall&lt;/Label&gt;
+  &lt;/div&gt;
+&lt;/RadioGroup&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

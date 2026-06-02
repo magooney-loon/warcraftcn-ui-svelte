@@ -87,14 +87,14 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-		  import { Input, Label } from 'warcraftcn-ui-svelte';
-		  let value = $state('');
-		&lt;/script&gt;
+  import { Input, Label } from 'warcraftcn-ui-svelte';
+  let value = $state('');
+&lt;/script&gt;
 
-		&lt;Input bind:value placeholder="Enter your hero name..." /&gt;
+&lt;Input bind:value placeholder="Enter your hero name..." /&gt;
 
-		&lt;Label for="name" required&gt;Hero Name&lt;/Label&gt;
-		&lt;Input id="name" placeholder="..." /&gt;</code>`}</pre>
+&lt;Label for="name" required&gt;Hero Name&lt;/Label&gt;
+&lt;Input id="name" placeholder="..." /&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->
