@@ -31,7 +31,7 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm run build
+      - run: npx vite build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
 
