@@ -1,0 +1,641 @@
+# warcraftcn-ui-svelte
+
+> A Svelte 5 UI component library styled after the classic Warcraft III RTS aesthetics — fantasy borders, scroll textures, faction-based color themes, and gold/amber color palettes.
+
+- Svelte Port Repository: https://github.com/magooney-loon/warcraftcn-ui-svelte
+- Original Repository (React/Next.js): https://github.com/TheOrcDev/warcraftcn-ui
+- Website: https://warcraftcn.com
+- License: MIT
+
+## Installation
+
+```bash
+npm install warcraftcn-ui-svelte
+```
+
+Requires Svelte 5 as a peer dependency. Designed for Tailwind CSS v4.
+
+## Quick Setup
+
+Add the `<Toaster />` to your root layout for toast notifications:
+
+```svelte
+<script>
+  import { Toaster } from 'warcraftcn-ui-svelte';
+</script>
+
+<slot />
+<Toaster />
+```
+
+Import the library's CSS in your app (e.g., `app.html` or root layout):
+
+```ts
+import 'warcraftcn-ui-svelte/warcraft.css';
+```
+
+## Faction Theming
+
+Many components accept a `faction` prop with unique styling per faction:
+
+| Faction   | Description                        |
+| --------- | ---------------------------------- |
+| default   | Gold/amber — standard Warcraft III |
+| orc       | Red tones — Orcish Horde           |
+| human     | Blue tones — Human Alliance        |
+| elf       | Green tones — Night Elf            |
+| undead    | Purple tones — Undead Scourge      |
+
+---
+
+## Components
+
+All components are exported from `warcraftcn-ui-svelte`.
+
+### Accordion
+
+Expandable/collapsible sections with animated sword/shield/rune icons and scroll textures.
+
+```svelte
+<script>
+  import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from 'warcraftcn-ui-svelte';
+</script>
+
+<Accordion type="single">
+  <AccordionItem value="item-1">
+    <AccordionTrigger value="item-1" icon="sword">Section Title</AccordionTrigger>
+    <AccordionContent value="item-1">Content here</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+**Accordion Props:**
+- `type?: 'single' | 'multiple'` — Single allows one open item; multiple allows any number. Default: `'multiple'`.
+- `class?: string`
+
+**AccordionItem Props:**
+- `value: string` — Unique identifier for this item.
+- `class?: string`
+
+**AccordionTrigger Props:**
+- `value: string` — Must match the parent AccordionItem's value.
+- `icon?: 'sword' | 'shield' | 'rune-stone'` — Icon displayed on the trigger. Default: `'sword'`.
+- `class?: string`
+
+**AccordionContent Props:**
+- `value: string` — Must match the parent AccordionItem's value.
+- `class?: string`
+
+---
+
+### Avatar
+
+Faction-themed avatar with image, fallback slot, and frame overlay.
+
+```svelte
+<script>
+  import { Avatar } from 'warcraftcn-ui-svelte';
+</script>
+
+<Avatar src="hero.png" alt="Hero" faction="orc" size="md" />
+
+<Avatar faction="human" size="sm">
+  <span>H</span>
+</Avatar>
+```
+
+**Props:**
+- `src?: string` — Image URL. If empty, shows the fallback snippet.
+- `alt?: string` — Image alt text.
+- `fallback?: Snippet` — Content shown when no `src` is provided.
+- `faction?: 'default' | 'orc' | 'elf' | 'human' | 'undead'` — Default: `'default'`.
+- `size?: 'sm' | 'md' | 'lg'` — Default: `'md'`.
+- `class?: string`
+
+---
+
+### Badge
+
+Inline badge with variant, faction, size, and shape options.
+
+```svelte
+<script>
+  import { Badge } from 'warcraftcn-ui-svelte';
+</script>
+
+<Badge variant="default">Quest</Badge>
+<Badge variant="destructive" shape="shield">Danger</Badge>
+<Badge faction="alliance" shape="banner">Alliance</Badge>
+<Badge faction="horde" size="lg">Horde</Badge>
+```
+
+**Props:**
+- `variant?: 'default' | 'secondary' | 'destructive' | 'outline'` — Default: `'default'`.
+- `size?: 'default' | 'sm' | 'lg'` — Default: `'default'`.
+- `faction?: 'none' | 'alliance' | 'horde'` — Default: `'none'`.
+- `shape?: 'default' | 'shield' | 'banner'` — Default: `'default'`.
+- `class?: string`
+
+---
+
+### Button
+
+Fantasy-themed button with `border-image` frame styles.
+
+```svelte
+<script>
+  import { Button } from 'warcraftcn-ui-svelte';
+</script>
+
+<Button>Default Button</Button>
+<Button variant="frame">Frame Button</Button>
+```
+
+**Props:**
+- `variant?: 'default' | 'frame'` — Default uses standard border; frame uses the ornate frame border-image. Default: `'default'`.
+- `class?: string`
+- `style?: string`
+- All native `<button>` HTML attributes are forwarded via `...rest`.
+
+---
+
+### Card
+
+Compound component with header, content, footer, and optional action slot. Uses `border-image` for the Warcraft card frame.
+
+```svelte
+<script>
+  import {
+    Card, CardHeader, CardTitle, CardDescription,
+    CardAction, CardContent, CardFooter
+  } from 'warcraftcn-ui-svelte';
+</script>
+
+<Card>
+  <CardHeader>
+    <CardTitle>Quest Log</CardTitle>
+    <CardDescription>Active quests in your journal</CardDescription>
+    <CardAction>
+      <Button variant="frame">Accept</Button>
+    </CardAction>
+  </CardHeader>
+  <CardContent>
+    <p>Defeat the dragon lord.</p>
+  </CardContent>
+  <CardFooter>
+    <span class="text-xs text-amber-400">3 remaining</span>
+  </CardFooter>
+</Card>
+```
+
+**Card Props:**
+- `size?: 'default' | 'sm'` — Controls border thickness and padding. Default: `'default'`.
+- `class?: string`
+
+**CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter Props:**
+- `class?: string`
+- All accept `children: Snippet`.
+
+---
+
+### Checkbox
+
+Faction-themed checkbox with bindable `checked` state.
+
+```svelte
+<script>
+  import { Checkbox } from 'warcraftcn-ui-svelte';
+  let accepted = $state(false);
+</script>
+
+<Checkbox bind:checked={accepted} faction="orc" id="quest-1">
+  Accept quest terms
+</Checkbox>
+```
+
+**Props:**
+- `checked?: boolean` — Bindable. Default: `false`.
+- `faction?: 'default' | 'orc' | 'elf' | 'human' | 'undead'` — Default: `'default'`.
+- `disabled?: boolean` — Default: `false`.
+- `id?: string`
+- `class?: string`
+
+---
+
+### Cursor
+
+Wraps content with a faction-based custom CSS cursor.
+
+```svelte
+<script>
+  import { Cursor } from 'warcraftcn-ui-svelte';
+</script>
+
+<Cursor faction="orc">
+  <p>This area has the Orc cursor</p>
+</Cursor>
+```
+
+**Props:**
+- `faction?: 'default' | 'orc' | 'elf' | 'human' | 'undead'` — Default: `'default'`.
+- `class?: string`
+
+---
+
+### Dropdown Menu
+
+Full dropdown menu with fantasy-themed borders, click-outside closing, and keyboard support.
+
+```svelte
+<script>
+  import {
+    DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
+    DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut
+  } from 'warcraftcn-ui-svelte';
+</script>
+
+<DropdownMenu>
+  <DropdownMenuTrigger>
+    <Button>Open Menu</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>Actions</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>
+      Edit <DropdownMenuShortcut>⌘E</DropdownMenuShortcut>
+    </DropdownMenuItem>
+    <DropdownMenuItem disabled>Delete</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+**DropdownMenu Props:**
+- `class?: string`
+
+**DropdownMenuTrigger Props:**
+- `class?: string`
+
+**DropdownMenuContent Props:**
+- `class?: string`
+- Uses `clickOutside` action to auto-close.
+
+**DropdownMenuItem Props:**
+- `disabled?: boolean`
+- `class?: string`
+- Clicking an item closes the menu.
+
+**DropdownMenuLabel Props:**
+- `class?: string`
+
+**DropdownMenuSeparator Props:**
+- `class?: string`
+
+**DropdownMenuShortcut Props:**
+- `class?: string`
+
+---
+
+### Input
+
+Text input with Warcraft-themed `border-image` frame.
+
+```svelte
+<script>
+  import { Input } from 'warcraftcn-ui-svelte';
+</script>
+
+<Input type="text" placeholder="Enter hero name..." />
+<Input type="password" />
+```
+
+**Props:**
+- `type?: string` — HTML input type. Default: `'text'`.
+- `class?: string`
+- All native `<input>` HTML attributes are forwarded.
+
+---
+
+### Label
+
+Fantasy-styled label with required indicator and muted variant.
+
+```svelte
+<script>
+  import { Label } from 'warcraftcn-ui-svelte';
+</script>
+
+<Label>Character Name</Label>
+<Label required>Required Field</Label>
+<Label variant="muted">Optional Info</Label>
+<Label disabled>Disabled Label</Label>
+```
+
+**Props:**
+- `variant?: 'default' | 'muted'` — Default shows amber text with glow; muted shows dimmer text. Default: `'default'`.
+- `required?: boolean` — Shows a red ✦ indicator. Default: `false`.
+- `disabled?: boolean` — Adds disabled styling. Default: `false`.
+- `class?: string`
+
+---
+
+### Pagination
+
+Navigation component for paging through content. Uses Button's frame border styling.
+
+```svelte
+<script>
+  import {
+    Pagination, PaginationContent, PaginationItem, PaginationLink,
+    PaginationPrevious, PaginationNext, PaginationEllipsis
+  } from 'warcraftcn-ui-svelte';
+</script>
+
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href="#" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#" isActive>1</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#">2</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="#" />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+**Pagination Props:** `class?: string`
+**PaginationContent Props:** `class?: string`
+**PaginationItem Props:** `class?: string`
+
+**PaginationLink Props:**
+- `isActive?: boolean` — Highlights as current page. Default: `false`.
+- `disabled?: boolean`
+- `href?: string`
+- `class?: string`
+
+**PaginationPrevious / PaginationNext Props:**
+- `href?: string`
+- `disabled?: boolean`
+- `class?: string`
+
+**PaginationEllipsis Props:**
+- `class?: string`
+
+---
+
+### Radio Group
+
+Faction-themed radio buttons with bindable `value` state.
+
+```svelte
+<script>
+  import { RadioGroup, RadioGroupItem } from 'warcraftcn-ui-svelte';
+  let selected = $state('orc');
+</script>
+
+<RadioGroup bind:value={selected} orientation="vertical" name="faction">
+  <label class="flex items-center gap-2">
+    <RadioGroupItem value="orc" />
+    <span>Orc</span>
+  </label>
+  <label class="flex items-center gap-2">
+    <RadioGroupItem value="human" />
+    <span>Human</span>
+  </label>
+</RadioGroup>
+```
+
+**RadioGroup Props:**
+- `value?: string` — Bindable. Currently selected value. Default: `''`.
+- `orientation?: 'vertical' | 'horizontal'` — Default: `'vertical'`.
+- `disabled?: boolean` — Disables all items. Default: `false`.
+- `name?: string` — Form field name.
+- `class?: string`
+
+**RadioGroupItem Props:**
+- `value: string` — The value this radio represents.
+- `disabled?: boolean`
+- `class?: string`
+
+---
+
+### Skeleton
+
+Pulsing fantasy-themed placeholder with faction variants.
+
+```svelte
+<script>
+  import { Skeleton } from 'warcraftcn-ui-svelte';
+</script>
+
+<Skeleton faction="default" />
+<Skeleton faction="orc" variant="circular" class="w-12 h-12" />
+```
+
+**Props:**
+- `variant?: 'default' | 'circular'` — Default: `'default'`.
+- `faction?: 'default' | 'orc' | 'elf' | 'human' | 'undead'` — Default: `'default'`.
+- `class?: string`
+
+---
+
+### Spinner
+
+SVG-based loading spinner with Warcraft III rune aesthetics.
+
+```svelte
+<script>
+  import { Spinner } from 'warcraftcn-ui-svelte';
+</script>
+
+<Spinner />
+<Spinner class="size-6" />
+```
+
+**Props:**
+- `class?: string`
+
+---
+
+### Tabs
+
+Faction-themed tabs supporting horizontal and vertical orientation with bindable `value`.
+
+```svelte
+<script>
+  import { Tabs, TabsList, TabsTrigger, TabsContent } from 'warcraftcn-ui-svelte';
+</script>
+
+<Tabs value="inventory" faction="default" orientation="horizontal">
+  <TabsList>
+    <TabsTrigger value="inventory">Inventory</TabsTrigger>
+    <TabsTrigger value="spells">Spells</TabsTrigger>
+    <TabsTrigger value="stats" disabled>Stats</TabsTrigger>
+  </TabsList>
+  <TabsContent value="inventory">Sword, Shield, Potion</TabsContent>
+  <TabsContent value="spells">Fireball, Heal</TabsContent>
+</Tabs>
+```
+
+**Tabs Props:**
+- `value?: string` — Bindable. The active tab value. Default: `''`.
+- `faction?: 'default' | 'orc' | 'elf' | 'human' | 'undead'` — Default: `'default'`.
+- `orientation?: 'horizontal' | 'vertical'` — Default: `'horizontal'`.
+- `class?: string`
+
+**TabsList Props:**
+- `class?: string`
+
+**TabsTrigger Props:**
+- `value: string` — Matches against the parent Tabs' `value`.
+- `disabled?: boolean` — Default: `false`.
+- `class?: string`
+
+**TabsContent Props:**
+- `value: string` — Shown when this value matches the active tab.
+- `class?: string`
+
+---
+
+### Textarea
+
+Styled textarea with Warcraft frame border.
+
+```svelte
+<script>
+  import { Textarea } from 'warcraftcn-ui-svelte';
+</script>
+
+<Textarea placeholder="Write your quest log..." />
+```
+
+**Props:**
+- `class?: string`
+- All native `<textarea>` HTML attributes are forwarded.
+
+---
+
+### Toast / Toaster
+
+Scroll-unroll animated toast system with 5 faction themes and 5 variants. Place `<Toaster />` in your root layout, then trigger toasts from anywhere.
+
+```svelte
+<!-- Root layout -->
+<script>
+  import { Toaster } from 'warcraftcn-ui-svelte';
+</script>
+
+<slot />
+<Toaster />
+```
+
+```svelte
+<!-- Any component -->
+<script>
+  import { triggerScrollToast } from 'warcraftcn-ui-svelte';
+</script>
+
+<button onclick={() => triggerScrollToast({ message: 'Quest accepted!', faction: 'orc', variant: 'success' })}>
+  Accept Quest
+</button>
+```
+
+**Toaster Props:**
+- `position?: ToastPosition` — Filter toasts to a specific position. If omitted, renders all toasts grouped by position.
+- `class?: string`
+
+**ToastPosition type:** `'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'`
+
+**triggerScrollToast(options):**
+- `message?: string` — Toast message text.
+- `faction?: ScrollFaction` — `'default' | 'orc' | 'elf' | 'human' | 'undead'`. Default: `'default'`.
+- `variant?: ToastVariant` — `'default' | 'success' | 'error' | 'warning' | 'info'`. Default: `'default'`.
+- `durationMs?: number` — Duration in milliseconds. Default: `5000`.
+- `position?: ToastPosition` — Default: `'top-center'`.
+
+**Other exports:**
+- `addToast(options)` — Adds a toast and returns its ID.
+- `removeToast(id)` — Removes a toast by ID.
+- `getToasts()` — Returns the current array of toasts.
+
+---
+
+### Tooltip
+
+Fantasy-themed tooltip with WoW-style rarity variants (default, uncommon, rare, epic, legendary). Positioned via fixed positioning relative to the trigger.
+
+```svelte
+<script>
+  import { Tooltip, TooltipTrigger, TooltipContent, TooltipTitle, TooltipBody } from 'warcraftcn-ui-svelte';
+</script>
+
+<Tooltip variant="legendary" side="top" sideOffset={12}>
+  <TooltipTrigger>
+    <Button>Hover me</Button>
+  </TooltipTrigger>
+  <TooltipContent>
+    <TooltipTitle>Legendary Sword</TooltipTitle>
+    <TooltipBody>Increases attack power by 42</TooltipBody>
+  </TooltipContent>
+</Tooltip>
+```
+
+**Tooltip Props:**
+- `variant?: 'default' | 'uncommon' | 'rare' | 'epic' | 'legendary'` — Color theme. Default: `'default'`.
+- `side?: 'top' | 'bottom' | 'left' | 'right'` — Placement relative to trigger. Default: `'bottom'`.
+- `sideOffset?: number` — Distance in px from trigger. Default: `8`.
+- `class?: string`
+
+**TooltipTrigger Props:** `class?: string`
+**TooltipContent Props:** `class?: string`
+**TooltipTitle Props:** `class?: string`
+**TooltipBody Props:** `class?: string`
+
+---
+
+## Actions
+
+### clickOutside
+
+A Svelte action that fires a callback when clicking outside the target element.
+
+```svelte
+<script>
+  import { clickOutside } from 'warcraftcn-ui-svelte';
+</script>
+
+<div use:clickOutside={() => console.log('clicked outside')}>
+  Inner content
+</div>
+```
+
+**Signature:** `clickOutside(node: HTMLElement, callback: () => void): { destroy(): void }`
+
+---
+
+## CSS Architecture
+
+The library uses `warcraft.css` for its core styling:
+
+- **Border images**: `wc-*` class prefixes define `border-image-source` rules (e.g., `wc-btn-border`, `wc-card-border`, `wc-dropdown-border`).
+- **Animations**: Keyframe-based animations for accordion open/close, light sweep, skeleton shimmer, spinner rotation.
+- **Component sizes**: CSS `border-image-slice` and `border-width` control the ornate frame effect.
+- **Faction classes**: Each faction maps to different `border-image`, background images, and color schemes via CSS classes like `wc-tabs-orc`, `wc-skeleton-human`, etc.
+
+## Tech Stack
+
+| Layer      | Technology        |
+| ---------- | ----------------- |
+| Framework  | Svelte 5 (Runes)  |
+| Language   | TypeScript        |
+| Styling    | Tailwind CSS v4   |
+| Animations | Svelte transitions and motion (tweened) |
+| Packaging  | `@sveltejs/package` |

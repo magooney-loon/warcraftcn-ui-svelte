@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { tweened } from 'svelte/motion';
+	import { Tween } from 'svelte/motion';
 	import { cubicInOut } from 'svelte/easing';
 	import type { Toast } from './toast-state.svelte.js';
 
@@ -40,21 +40,27 @@
 	const CENTER_WIDTH = 264;
 	const ENTER_MS = 800;
 
-	const centerWidth = tweened(0, { duration: ENTER_MS, easing: cubicInOut });
+	const centerWidth = new Tween(0, { duration: ENTER_MS, easing: cubicInOut });
 	let textVisible = $state(false);
 
 	onMount(() => {
-		centerWidth.set(CENTER_WIDTH).then(() => {
+		centerWidth.target = CENTER_WIDTH;
+
+		// Watch for the tween to reach its target
+		const enterCheck = setTimeout(() => {
 			textVisible = true;
-		});
+		}, ENTER_MS + 50);
 
 		const exitMs = Math.max(ENTER_MS + 200, toast.durationMs - 1000);
 		const exitTimer = setTimeout(() => {
 			textVisible = false;
-			setTimeout(() => centerWidth.set(0), 150);
+			setTimeout(() => (centerWidth.target = 0), 150);
 		}, exitMs);
 
-		return () => clearTimeout(exitTimer);
+		return () => {
+			clearTimeout(enterCheck);
+			clearTimeout(exitTimer);
+		};
 	});
 </script>
 
@@ -68,7 +74,7 @@
 	<!-- Center content (animated width) -->
 	<div
 		class="relative z-10 -mx-2 h-25 shrink-0 overflow-hidden {theme.centerBgClass}"
-		style="width: {$centerWidth}px;"
+		style="width: {centerWidth.current}px;"
 	>
 		<div
 			class="flex h-full w-full flex-col items-center justify-center px-2 py-2 text-center font-serif transition-all duration-500"
