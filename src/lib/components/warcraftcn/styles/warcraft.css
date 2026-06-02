@@ -735,6 +735,17 @@
 	}
 }
 
+@keyframes wc-light-sweep-reverse {
+	from {
+		transform: translateX(100%);
+		opacity: 1;
+	}
+	to {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
 @keyframes wc-accordion-down {
 	from {
 		height: 0;

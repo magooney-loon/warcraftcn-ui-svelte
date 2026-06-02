@@ -24,6 +24,9 @@
 			className
 		]}
 		transition:slide={{ duration: 250 }}
+		role="region"
+		aria-labelledby={`accordion-trigger-${value}`}
+		id={`accordion-content-${value}`}
 	>
 		<div
 			class={[

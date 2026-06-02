@@ -32,6 +32,7 @@
 	]}
 	data-orientation={ctx.orientation}
 	data-state={isActive ? 'active' : 'inactive'}
+	aria-selected={isActive}
 	{disabled}
 	onclick={() => !disabled && ctx.setActive(value)}
 >

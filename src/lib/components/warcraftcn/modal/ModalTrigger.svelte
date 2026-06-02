@@ -14,7 +14,7 @@
 
 <button
 	{...rest}
-	class={['inline-flex items-center justify-center outline-none', className]}
+	class={['inline-flex cursor-pointer items-center justify-center outline-none', className]}
 	data-slot="modal-trigger"
 	onclick={ctx.toggle}
 >

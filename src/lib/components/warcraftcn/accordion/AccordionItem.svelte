@@ -12,6 +12,11 @@
 	} = $props();
 </script>
 
-<div class={['relative', className]} data-accordion-value={value}>
+<div
+	class={['relative', className]}
+	data-slot="accordion-item"
+	data-accordion-value={value}
+	id={`accordion-item-${value}`}
+>
 	{@render children?.()}
 </div>

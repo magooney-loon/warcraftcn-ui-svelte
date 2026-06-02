@@ -38,6 +38,7 @@
 		'fantasy relative flex w-full flex-col gap-2 rounded-xl bg-transparent px-[0.7rem] py-[0.6rem] text-[hsl(0_0%_95%)] shadow-none',
 		className
 	]}
+	data-slot="accordion"
 >
 	{@render children?.()}
 </div>

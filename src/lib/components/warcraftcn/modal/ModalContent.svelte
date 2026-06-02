@@ -38,7 +38,12 @@
 		></div>
 
 		<!-- Modal Card -->
-		<div class="relative z-10 w-full max-w-lg" transition:scale={{ duration: 200, start: 0.95 }}>
+		<div
+			class="relative z-10 w-full max-w-lg"
+			transition:scale={{ duration: 200, start: 0.95 }}
+			role="dialog"
+			aria-modal="true"
+		>
 			<Card {size} class={className}>
 				{@render children?.()}
 			</Card>
