@@ -37,8 +37,12 @@ export default defineConfig(
 		}
 	},
 	{
-		// Override or add rule settings here, such as:
-		// 'svelte/button-has-type': 'error'
-		rules: {}
+		files: ['**/*.svelte'],
+		rules: {
+			// SvelteKit works fine with plain href paths for internal links
+			'svelte/no-navigation-without-resolve': 'off',
+			// Code examples in docs use {@html} with static strings — safe
+			'svelte/no-at-html-tags': 'off'
+		}
 	}
 );
