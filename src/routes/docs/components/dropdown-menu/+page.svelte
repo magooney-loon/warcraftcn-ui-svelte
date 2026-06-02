@@ -83,28 +83,24 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import {
-    DropdownMenu, DropdownMenuTrigger,
-    DropdownMenuContent, DropdownMenuItem,
-    DropdownMenuLabel, DropdownMenuSeparator,
-    DropdownMenuShortcut
-  } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		  import {
+		    DropdownMenu, DropdownMenuTrigger,
+		    DropdownMenuContent, DropdownMenuItem,
+		    DropdownMenuLabel, DropdownMenuSeparator
+		  } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;DropdownMenu&gt;
-  &lt;DropdownMenuTrigger&gt;
-    &lt;Button&gt;Open Menu&lt;/Button&gt;
-  &lt;/DropdownMenuTrigger&gt;
-  &lt;DropdownMenuContent&gt;
-    &lt;DropdownMenuLabel&gt;Actions&lt;/DropdownMenuLabel&gt;
-    &lt;DropdownMenuSeparator /&gt;
-    &lt;DropdownMenuItem&gt;
-      Attack
-      &lt;DropdownMenuShortcut&gt;A&lt;/DropdownMenuShortcut&gt;
-    &lt;/DropdownMenuItem&gt;
-    &lt;DropdownMenuItem disabled&gt;Locked&lt;/DropdownMenuItem&gt;
-  &lt;/DropdownMenuContent&gt;
-&lt;/DropdownMenu&gt;</code>`}</pre>
+		&lt;DropdownMenu&gt;
+		  &lt;DropdownMenuTrigger&gt;
+		    &lt;Button&gt;Open Menu&lt;/Button&gt;
+		  &lt;/DropdownMenuTrigger&gt;
+		  &lt;DropdownMenuContent&gt;
+		    &lt;DropdownMenuLabel&gt;Actions&lt;/DropdownMenuLabel&gt;
+		    &lt;DropdownMenuSeparator /&gt;
+		    &lt;DropdownMenuItem&gt;New Game&lt;/DropdownMenuItem&gt;
+		    &lt;DropdownMenuItem disabled&gt;Locked&lt;/DropdownMenuItem&gt;
+		  &lt;/DropdownMenuContent&gt;
+		&lt;/DropdownMenu&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->
@@ -129,7 +125,9 @@
 				</tbody>
 			</table>
 		</div>
-		<p class="mt-2 text-xs font-semibold tracking-wider text-amber-400 uppercase">DropdownMenuItem</p>
+		<p class="mt-2 text-xs font-semibold tracking-wider text-amber-400 uppercase">
+			DropdownMenuItem
+		</p>
 		<div class="overflow-x-auto rounded-lg border border-amber-900/30">
 			<table class="w-full text-sm text-amber-100/80">
 				<thead class="border-b border-amber-900/30 bg-black/20">

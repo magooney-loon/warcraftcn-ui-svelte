@@ -128,26 +128,25 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;!-- In your root +layout.svelte --&gt;
-&lt;script&gt;
-  import { Toaster } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		&lt;script&gt;
+		  import { Toaster } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;slot /&gt;
-&lt;Toaster /&gt;
+		&lt;slot /&gt;
+		&lt;Toaster /&gt;
 
-&lt;!-- Trigger from anywhere --&gt;
-&lt;script&gt;
-  import { triggerScrollToast } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		&lt;!-- Trigger from anywhere --&gt;
+		&lt;script&gt;
+		  import { triggerScrollToast } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;button onclick={() =&gt; triggerScrollToast({
-  message: 'Quest accepted!',
-  faction: 'orc',        // default | orc | elf | human | undead
-  variant: 'success',    // default | success | error | warning | info
-  durationMs: 5000       // default: 5000
-})}&gt;
-  Show Toast
-&lt;/button&gt;</code>`}</pre>
+		&lt;button onclick={() =&gt; triggerScrollToast({
+		  message: 'Quest accepted!',
+		  faction: 'orc',
+		  variant: 'success'
+		})}&gt;
+		  Show Toast
+		&lt;/button&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

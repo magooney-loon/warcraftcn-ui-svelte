@@ -87,20 +87,14 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Input, Label } from 'warcraftcn-ui-svelte';
-  let value = $state('');
-&lt;/script&gt;
+		  import { Input, Label } from 'warcraftcn-ui-svelte';
+		  let value = $state('');
+		&lt;/script&gt;
 
-&lt;Input bind:value placeholder="Enter your hero name..." /&gt;
-&lt;Input type="password" placeholder="Secret..." /&gt;
-&lt;Input type="email" placeholder="hero@azeroth.com" /&gt;
-&lt;Input type="number" min="0" /&gt;
-&lt;Input type="search" placeholder="Search..." /&gt;
-&lt;Input disabled /&gt;
+		&lt;Input bind:value placeholder="Enter your hero name..." /&gt;
 
-&lt;!-- With label --&gt;
-&lt;Label for="name" required&gt;Hero Name&lt;/Label&gt;
-&lt;Input id="name" placeholder="..." /&gt;</code>`}</pre>
+		&lt;Label for="name" required&gt;Hero Name&lt;/Label&gt;
+		&lt;Input id="name" placeholder="..." /&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->
@@ -131,8 +125,8 @@
 		</div>
 		<p class="mt-2 text-xs text-amber-100/50">
 			All standard HTML input attributes (<code class="text-amber-300">placeholder</code>,
-			<code class="text-amber-300">disabled</code>, <code class="text-amber-300">id</code>, etc.) are
-			forwarded to the underlying <code class="text-amber-300">&lt;input&gt;</code> element.
+			<code class="text-amber-300">disabled</code>, <code class="text-amber-300">id</code>, etc.)
+			are forwarded to the underlying <code class="text-amber-300">&lt;input&gt;</code> element.
 		</p>
 	</section>
 </div>

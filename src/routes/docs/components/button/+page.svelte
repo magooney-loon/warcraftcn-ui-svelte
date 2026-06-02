@@ -67,8 +67,9 @@
 	<section class="space-y-4">
 		<h2 class="fantasy text-xl text-amber-300">Click Handler</h2>
 		<p class="text-sm text-amber-100/60">
-			Any HTML attribute is forwarded to the underlying <code class="text-amber-300">&lt;button&gt;</code>.
-			Use <code class="text-amber-300">onclick</code> for click events.
+			Any HTML attribute is forwarded to the underlying <code class="text-amber-300"
+				>&lt;button&gt;</code
+			>. Use <code class="text-amber-300">onclick</code> for click events.
 		</p>
 		<div class="flex flex-wrap items-center gap-4">
 			<Button onclick={() => alert('Quest accepted!')}>Accept Quest</Button>
@@ -81,21 +82,12 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Button } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		  import { Button } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;Button&gt;Accept Quest&lt;/Button&gt;
-&lt;Button variant="frame"&gt;Open Chest&lt;/Button&gt;
-&lt;Button disabled&gt;Locked&lt;/Button&gt;
-
-&lt;!-- Loading state --&gt;
-&lt;Button disabled={loading} onclick={handleClick}&gt;
-  {#if loading}
-    &lt;Spinner class="size-4" /&gt; Loading...
-  {:else}
-    Submit
-  {/if}
-&lt;/Button&gt;</code>`}</pre>
+		&lt;Button&gt;Accept Quest&lt;/Button&gt;
+		&lt;Button variant="frame"&gt;Open Chest&lt;/Button&gt;
+		&lt;Button disabled&gt;Locked&lt;/Button&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->
@@ -110,23 +102,23 @@
 						<th class="px-4 py-2 text-left text-amber-300">Default</th>
 					</tr>
 				</thead>
-			<tbody>
-				<tr class="border-b border-amber-900/20">
-					<td class="px-4 py-2 font-mono">variant</td>
-					<td class="px-4 py-2">"default" | "frame"</td>
-					<td class="px-4 py-2">"default"</td>
-				</tr>
-				<tr class="border-b border-amber-900/20">
-					<td class="px-4 py-2 font-mono">style</td>
-					<td class="px-4 py-2">string</td>
-					<td class="px-4 py-2">""</td>
-				</tr>
-				<tr>
-					<td class="px-4 py-2 font-mono">class</td>
-					<td class="px-4 py-2">string</td>
-					<td class="px-4 py-2">""</td>
-				</tr>
-			</tbody>
+				<tbody>
+					<tr class="border-b border-amber-900/20">
+						<td class="px-4 py-2 font-mono">variant</td>
+						<td class="px-4 py-2">"default" | "frame"</td>
+						<td class="px-4 py-2">"default"</td>
+					</tr>
+					<tr class="border-b border-amber-900/20">
+						<td class="px-4 py-2 font-mono">style</td>
+						<td class="px-4 py-2">string</td>
+						<td class="px-4 py-2">""</td>
+					</tr>
+					<tr>
+						<td class="px-4 py-2 font-mono">class</td>
+						<td class="px-4 py-2">string</td>
+						<td class="px-4 py-2">""</td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 	</section>

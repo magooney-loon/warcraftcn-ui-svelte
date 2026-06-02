@@ -72,21 +72,11 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Skeleton } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		  import { Skeleton } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;!-- Default rectangle --&gt;
-&lt;Skeleton class="h-24 w-40" /&gt;
-
-&lt;!-- Faction-colored --&gt;
-&lt;Skeleton faction="orc" class="h-24 w-40" /&gt;
-&lt;Skeleton faction="elf" class="h-24 w-40" /&gt;
-&lt;Skeleton faction="human" class="h-24 w-40" /&gt;
-&lt;Skeleton faction="undead" class="h-24 w-40" /&gt;
-
-&lt;!-- Circular --&gt;
-&lt;Skeleton variant="circular" class="h-16 w-16" /&gt;
-&lt;Skeleton variant="circular" faction="orc" class="h-16 w-16" /&gt;</code>`}</pre>
+		&lt;Skeleton class="h-24 w-40" /&gt;
+		&lt;Skeleton variant="circular" faction="orc" class="h-16 w-16" /&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

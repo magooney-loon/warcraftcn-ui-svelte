@@ -76,14 +76,12 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Cursor } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		  import { Cursor } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;Cursor faction="orc"&gt;
-  &lt;div&gt;Hover over me for the orc cursor&lt;/div&gt;
-&lt;/Cursor&gt;
-
-&lt;!-- Factions: default | orc | elf | human | undead --&gt;</code>`}</pre>
+		&lt;Cursor faction="orc"&gt;
+		  &lt;div&gt;Hover over me for the orc cursor&lt;/div&gt;
+		&lt;/Cursor&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

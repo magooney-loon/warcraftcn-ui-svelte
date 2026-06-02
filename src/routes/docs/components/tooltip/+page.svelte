@@ -146,24 +146,21 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import {
-    Tooltip, TooltipTrigger, TooltipContent,
-    TooltipTitle, TooltipBody
-  } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		  import {
+		    Tooltip, TooltipTrigger, TooltipContent,
+		    TooltipTitle, TooltipBody
+		  } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;Tooltip variant="rare" side="top" sideOffset={12}&gt;
-  &lt;TooltipTrigger&gt;
-    &lt;Button&gt;Hover me&lt;/Button&gt;
-  &lt;/TooltipTrigger&gt;
-  &lt;TooltipContent&gt;
-    &lt;TooltipTitle&gt;Rare Item&lt;/TooltipTitle&gt;
-    &lt;TooltipBody&gt;A rare piece of equipment.&lt;/TooltipBody&gt;
-  &lt;/TooltipContent&gt;
-&lt;/Tooltip&gt;
-
-&lt;!-- Variants: default | uncommon | rare | epic | legendary --&gt;
-&lt;!-- Side: top | bottom | left | right --&gt;</code>`}</pre>
+		&lt;Tooltip variant="rare" side="top"&gt;
+		  &lt;TooltipTrigger&gt;
+		    &lt;Button&gt;Hover me&lt;/Button&gt;
+		  &lt;/TooltipTrigger&gt;
+		  &lt;TooltipContent&gt;
+		    &lt;TooltipTitle&gt;Rare Item&lt;/TooltipTitle&gt;
+		    &lt;TooltipBody&gt;A rare piece of equipment.&lt;/TooltipBody&gt;
+		  &lt;/TooltipContent&gt;
+		&lt;/Tooltip&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

@@ -158,27 +158,18 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Tabs, TabsList, TabsTrigger, TabsContent } from 'warcraftcn-ui-svelte';
-  let active = $state('tab1');
-&lt;/script&gt;
+		  import { Tabs, TabsList, TabsTrigger, TabsContent } from 'warcraftcn-ui-svelte';
+		  let active = $state('tab1');
+		&lt;/script&gt;
 
-&lt;Tabs bind:value={active}&gt;
-  &lt;TabsList&gt;
-    &lt;TabsTrigger value="tab1"&gt;Tab 1&lt;/TabsTrigger&gt;
-    &lt;TabsTrigger value="tab2"&gt;Tab 2&lt;/TabsTrigger&gt;
-  &lt;/TabsList&gt;
-  &lt;TabsContent value="tab1"&gt;Content 1&lt;/TabsContent&gt;
-  &lt;TabsContent value="tab2"&gt;Content 2&lt;/TabsContent&gt;
-&lt;/Tabs&gt;
-
-&lt;!-- Faction variants --&gt;
-&lt;Tabs faction="orc" value="tab1"&gt;...&lt;/Tabs&gt;
-&lt;Tabs faction="human" value="tab1"&gt;...&lt;/Tabs&gt;
-&lt;Tabs faction="elf" value="tab1"&gt;...&lt;/Tabs&gt;
-&lt;Tabs faction="undead" value="tab1"&gt;...&lt;/Tabs&gt;
-
-&lt;!-- Vertical orientation --&gt;
-&lt;Tabs orientation="vertical" value="tab1"&gt;...&lt;/Tabs&gt;</code>`}</pre>
+		&lt;Tabs bind:value={active}&gt;
+		  &lt;TabsList&gt;
+		    &lt;TabsTrigger value="tab1"&gt;Tab 1&lt;/TabsTrigger&gt;
+		    &lt;TabsTrigger value="tab2"&gt;Tab 2&lt;/TabsTrigger&gt;
+		  &lt;/TabsList&gt;
+		  &lt;TabsContent value="tab1"&gt;Content 1&lt;/TabsContent&gt;
+		  &lt;TabsContent value="tab2"&gt;Content 2&lt;/TabsContent&gt;
+		&lt;/Tabs&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

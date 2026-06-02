@@ -134,21 +134,10 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Spinner, Button } from 'warcraftcn-ui-svelte';
-  let loading = $state(false);
-&lt;/script&gt;
+		  import { Spinner } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;!-- Standalone --&gt;
-&lt;Spinner class="size-10" /&gt;
-
-&lt;!-- In a loading button --&gt;
-&lt;Button disabled={loading} onclick={handleClick}&gt;
-  {#if loading}
-    &lt;Spinner class="size-4" /&gt; Loading...
-  {:else}
-    Submit
-  {/if}
-&lt;/Button&gt;</code>`}</pre>
+		&lt;Spinner class="size-10" /&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->
@@ -174,8 +163,8 @@
 		</div>
 		<p class="mt-2 text-xs text-amber-100/50">
 			Size the spinner with Tailwind's <code class="text-amber-300">size-*</code> utility via the
-			<code class="text-amber-300">class</code> prop. All other attributes are forwarded to the
-			underlying SVG.
+			<code class="text-amber-300">class</code> prop. All other attributes are forwarded to the underlying
+			SVG.
 		</p>
 	</section>
 </div>

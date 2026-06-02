@@ -84,19 +84,11 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Badge } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		  import { Badge } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;Badge&gt;Default&lt;/Badge&gt;
-&lt;Badge variant="secondary"&gt;Secondary&lt;/Badge&gt;
-&lt;Badge variant="destructive"&gt;Destructive&lt;/Badge&gt;
-&lt;Badge variant="outline"&gt;Outline&lt;/Badge&gt;
-
-&lt;Badge size="sm"&gt;Small&lt;/Badge&gt;
-&lt;Badge size="lg"&gt;Large&lt;/Badge&gt;
-
-&lt;Badge faction="alliance" shape="shield"&gt;Alliance&lt;/Badge&gt;
-&lt;Badge faction="horde" shape="banner"&gt;Horde&lt;/Badge&gt;</code>`}</pre>
+		&lt;Badge variant="secondary"&gt;Secondary&lt;/Badge&gt;
+		&lt;Badge size="lg" faction="alliance" shape="shield"&gt;Alliance&lt;/Badge&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

@@ -118,28 +118,24 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import {
-    Card, CardHeader, CardTitle, CardDescription,
-    CardAction, CardContent, CardFooter
-  } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		  import {
+		    Card, CardHeader, CardTitle, CardDescription,
+		    CardAction, CardContent, CardFooter
+		  } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;Card&gt;
-  &lt;CardHeader&gt;
-    &lt;CardTitle&gt;Title&lt;/CardTitle&gt;
-    &lt;CardDescription&gt;Description&lt;/CardDescription&gt;
-    &lt;CardAction&gt;&lt;Badge&gt;Active&lt;/Badge&gt;&lt;/CardAction&gt;
-  &lt;/CardHeader&gt;
-  &lt;CardContent&gt;
-    &lt;p&gt;Card body content.&lt;/p&gt;
-  &lt;/CardContent&gt;
-  &lt;CardFooter&gt;
-    &lt;Button&gt;Action&lt;/Button&gt;
-  &lt;/CardFooter&gt;
-&lt;/Card&gt;
-
-&lt;!-- Compact size --&gt;
-&lt;Card size="sm"&gt;...&lt;/Card&gt;</code>`}</pre>
+		&lt;Card&gt;
+		  &lt;CardHeader&gt;
+		    &lt;CardTitle&gt;Title&lt;/CardTitle&gt;
+		    &lt;CardDescription&gt;Description&lt;/CardDescription&gt;
+		  &lt;/CardHeader&gt;
+		  &lt;CardContent&gt;
+		    &lt;p&gt;Card body content.&lt;/p&gt;
+		  &lt;/CardContent&gt;
+		  &lt;CardFooter&gt;
+		    &lt;Button&gt;Action&lt;/Button&gt;
+		  &lt;/CardFooter&gt;
+		&lt;/Card&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->

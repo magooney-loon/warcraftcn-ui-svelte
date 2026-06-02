@@ -142,32 +142,32 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import {
-    Pagination, PaginationContent, PaginationItem,
-    PaginationLink, PaginationPrevious,
-    PaginationNext, PaginationEllipsis
-  } from 'warcraftcn-ui-svelte';
-&lt;/script&gt;
+		  import {
+		    Pagination, PaginationContent, PaginationItem,
+		    PaginationLink, PaginationPrevious,
+		    PaginationNext, PaginationEllipsis
+		  } from 'warcraftcn-ui-svelte';
+		&lt;/script&gt;
 
-&lt;Pagination&gt;
-  &lt;PaginationContent&gt;
-    &lt;PaginationItem&gt;
-      &lt;PaginationPrevious href="/page/1" /&gt;
-    &lt;/PaginationItem&gt;
-    &lt;PaginationItem&gt;
-      &lt;PaginationLink href="/page/1"&gt;1&lt;/PaginationLink&gt;
-    &lt;/PaginationItem&gt;
-    &lt;PaginationItem&gt;
-      &lt;PaginationLink href="/page/2" isActive={true}&gt;2&lt;/PaginationLink&gt;
-    &lt;/PaginationItem&gt;
-    &lt;PaginationItem&gt;
-      &lt;PaginationEllipsis /&gt;
-    &lt;/PaginationItem&gt;
-    &lt;PaginationItem&gt;
-      &lt;PaginationNext href="/page/3" /&gt;
-    &lt;/PaginationItem&gt;
-  &lt;/PaginationContent&gt;
-&lt;/Pagination&gt;</code>`}</pre>
+		&lt;Pagination&gt;
+		  &lt;PaginationContent&gt;
+		    &lt;PaginationItem&gt;
+		      &lt;PaginationPrevious href="#" /&gt;
+		    &lt;/PaginationItem&gt;
+		    &lt;PaginationItem&gt;
+		      &lt;PaginationLink href="#"&gt;1&lt;/PaginationLink&gt;
+		    &lt;/PaginationItem&gt;
+		    &lt;PaginationItem&gt;
+		      &lt;PaginationLink href="#" isActive={true}&gt;2&lt;/PaginationLink&gt;
+		    &lt;/PaginationItem&gt;
+		    &lt;PaginationItem&gt;
+		      &lt;PaginationEllipsis /&gt;
+		    &lt;/PaginationItem&gt;
+		    &lt;PaginationItem&gt;
+		      &lt;PaginationNext href="#" /&gt;
+		    &lt;/PaginationItem&gt;
+		  &lt;/PaginationContent&gt;
+		&lt;/Pagination&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->
@@ -202,7 +202,9 @@
 				</tbody>
 			</table>
 		</div>
-		<p class="mt-2 text-xs font-semibold tracking-wider text-amber-400 uppercase">PaginationPrevious / PaginationNext</p>
+		<p class="mt-2 text-xs font-semibold tracking-wider text-amber-400 uppercase">
+			PaginationPrevious / PaginationNext
+		</p>
 		<div class="overflow-x-auto rounded-lg border border-amber-900/30">
 			<table class="w-full text-sm text-amber-100/80">
 				<thead class="border-b border-amber-900/30 bg-black/20">

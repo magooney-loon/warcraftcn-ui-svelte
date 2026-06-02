@@ -55,16 +55,14 @@
 		<h2 class="fantasy text-xl text-amber-300">Usage</h2>
 		<pre
 			class="overflow-x-auto rounded-lg border border-amber-900/30 bg-black/40 p-4 text-sm text-amber-100/80">{@html `<code>&lt;script&gt;
-  import { Textarea, Label } from 'warcraftcn-ui-svelte';
-  let value = $state('');
-&lt;/script&gt;
+		  import { Textarea, Label } from 'warcraftcn-ui-svelte';
+		  let value = $state('');
+		&lt;/script&gt;
 
-&lt;Textarea bind:value placeholder="Write your battle plans..." /&gt;
-&lt;Textarea disabled /&gt;
+		&lt;Textarea bind:value placeholder="Write your battle plans..." /&gt;
 
-&lt;!-- With label --&gt;
-&lt;Label for="lore" required&gt;Lore Entry&lt;/Label&gt;
-&lt;Textarea id="lore" placeholder="Write your lore..." /&gt;</code>`}</pre>
+		&lt;Label for="lore" required&gt;Lore Entry&lt;/Label&gt;
+		&lt;Textarea id="lore" placeholder="Write your lore..." /&gt;</code>`}</pre>
 	</section>
 
 	<!-- Props -->
@@ -90,8 +88,8 @@
 		</div>
 		<p class="mt-2 text-xs text-amber-100/50">
 			All standard HTML textarea attributes (<code class="text-amber-300">placeholder</code>,
-			<code class="text-amber-300">disabled</code>, <code class="text-amber-300">id</code>, etc.) are
-			forwarded to the underlying <code class="text-amber-300">&lt;textarea&gt;</code> element.
+			<code class="text-amber-300">disabled</code>, <code class="text-amber-300">id</code>, etc.)
+			are forwarded to the underlying <code class="text-amber-300">&lt;textarea&gt;</code> element.
 		</p>
 	</section>
 </div>
