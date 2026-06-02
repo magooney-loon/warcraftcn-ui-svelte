@@ -2,15 +2,17 @@
 	import PaginationLink from './PaginationLink.svelte';
 
 	interface Props {
+		href?: string;
 		disabled?: boolean;
 		class?: string;
 	}
 
-	let { disabled = false, class: className = '' }: Props = $props();
+	let { href = '', disabled = false, class: className = '' }: Props = $props();
 </script>
 
 <li data-slot="pagination-next">
 	<PaginationLink
+		{href}
 		{disabled}
 		class={`gap-1 sm:w-auto sm:px-4 sm:pl-5 ${className}`}
 		aria-label="Go to next page"

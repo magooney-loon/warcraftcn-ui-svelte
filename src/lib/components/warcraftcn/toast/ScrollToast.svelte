@@ -59,7 +59,7 @@
 </script>
 
 <div
-	class="pointer-events-auto relative mx-auto flex h-28 w-[300px] items-center justify-center"
+	class="pointer-events-auto relative mx-auto flex h-28 w-75 items-center justify-center"
 	data-slot="scroll-toast"
 >
 	<!-- Left scroll handle -->
@@ -67,18 +67,20 @@
 
 	<!-- Center content (animated width) -->
 	<div
-		class="relative z-10 -mx-2 h-[100px] shrink-0 overflow-hidden {theme.centerBgClass}"
+		class="relative z-10 -mx-2 h-25 shrink-0 overflow-hidden {theme.centerBgClass}"
 		style="width: {$centerWidth}px;"
 	>
 		<div
 			class="flex h-full w-full flex-col items-center justify-center px-2 py-2 text-center font-serif transition-all duration-500"
-			style="opacity: {textVisible ? 1 : 0}; filter: blur({textVisible ? 0 : 4}px); transform: scale({textVisible ? 1 : 0.95});"
+			style="opacity: {textVisible ? 1 : 0}; filter: blur({textVisible
+				? 0
+				: 4}px); transform: scale({textVisible ? 1 : 0.95});"
 		>
 			<div class="flex w-full flex-row items-center justify-center gap-1">
 				{#if icon}
 					<span class="inline shrink-0 align-middle text-sm {textColor}">{icon}</span>
 				{/if}
-				<span class="fantasy truncate text-xs leading-snug align-middle {textColor}">
+				<span class="fantasy truncate align-middle text-xs leading-snug {textColor}">
 					{toast.message}
 				</span>
 			</div>
